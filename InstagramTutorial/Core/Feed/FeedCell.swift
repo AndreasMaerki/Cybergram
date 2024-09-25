@@ -5,86 +5,90 @@
 //  Created by Andreas Maerki on 26.04.24.
 //
 
+import OSLog
 import SwiftUI
 
 struct FeedCell: View {
-    var body: some View {
-        VStack(alignment: .leading) {
-            // image + user name
-            userImageAndName
-                .padding(.horizontal, 8)
+  var post: Post
 
-            // post image
-            Image(.kairo2100)
-                .resizable()
-                .scaledToFit()
-                .clipShape(.rect)
+  var body: some View {
+    VStack(alignment: .leading) {
+      // image + user name
+      userImageAndName
+        .padding(.horizontal, 8)
 
-            // action buttons
-            actionButtons
-                .padding(.horizontal, 8)
-                .padding(.top, 4)
+      // post image
+      Image(post.imageUrl)
+        .resizable()
+        .scaledToFit()
+        .clipShape(.rect)
 
-            Text("23 likes")
-                .font(.footnote)
-                .fontWeight(.semibold)
-                .padding(.horizontal, 10)
-                .padding(.top, 1)
-            HStack {
-                Text("Egypt ").fontWeight(.semibold) +
-                    Text("Kairo in the year 2100 Kairo in the year 2100 Kairo in the year 2100")
-            }
-            .font(.footnote)
-            .padding(.horizontal, 10)
-            .padding(.top, 0.5)
+      // action buttons
+      actionButtons
+        .padding(.horizontal, 8)
+        .padding(.top, 4)
 
-            Text("6h ago")
-                .font(.footnote)
-                .padding(.horizontal, 10)
-                .foregroundColor(.gray)
-                .padding(.top, 1)
-        }
+      Text("\(post.likes) likes")
+        .font(.footnote)
+        .fontWeight(.semibold)
+        .padding(.horizontal, 10)
+        .padding(.top, 1)
+      HStack {
+        Text("\(post.user?.userName ?? "") ").fontWeight(.semibold) +
+        Text(post.caption)
+      }
+      .font(.footnote)
+      .padding(.horizontal, 10)
+      .padding(.top, 0.5)
+
+      Text("6h ago")
+        .modifier(.grayFootnote)
+        .padding(.horizontal, 10)
+        .padding(.top, 1)
     }
+  }
 
-    private var userImageAndName: some View {
-        HStack {
-            Image(.kairo2100)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40)
-                .clipShape(.circle)
+  private var userImageAndName: some View {
+    HStack {
+      if let user = post.user {
+        Image(user.profileImageURL ?? "")
+          .resizable()
+          .scaledToFill()
+          .frame(width: 40, height: 40)
+          .clipShape(.circle)
 
-            Text("Kairo")
-                .font(.footnote)
-                .fontWeight(.semibold)
-        }
+        Text(user.userName)
+          .font(.footnote)
+          .fontWeight(.semibold)
+      }
     }
+  }
 
-    private var actionButtons: some View {
-        HStack {
-            Button {
-                print("liked")
-            } label: {
-                Image(systemName: "heart")
-            }
-            Button {
-                print("comment")
-            } label: {
-                Image(systemName: "bubble.right")
-            }
-            Button {
-                print("liked")
-            } label: {
-                Image(systemName: "paperplane")
-            }
+  private var actionButtons: some View {
+    HStack {
+      Button {
+        Logger.viewCycle.info("liked")
+      } label: {
+        Image(systemName: "heart")
+      }
+      Button {
+        Logger.viewCycle.info("comment")
+      } label: {
+        Image(systemName: "bubble.right")
+      }
+      Button {
+        Logger.viewCycle.info("share")
+      } label: {
+        Image(systemName: "paperplane")
+      }
 
-            Spacer()
-        }
-        .imageScale(.large)
-        .foregroundColor(.black)
+      Spacer()
     }
+    .imageScale(.large)
+    .foregroundColor(.black)
+  }
 }
 
 #Preview {
-    FeedCell()
+  FeedCell(post: Post.MOCK_POST[0])
 }

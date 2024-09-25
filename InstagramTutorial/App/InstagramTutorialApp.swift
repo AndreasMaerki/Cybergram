@@ -1,17 +1,22 @@
-//
-//  InstagramTutorialApp.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 25.04.24.
-//
-
+import FirebaseCore
 import SwiftUI
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(
+    _: UIApplication,
+    didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil
+  ) -> Bool {
+    FirebaseApp.configure()
+    return true
+  }
+}
 
 @main
 struct InstagramTutorialApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

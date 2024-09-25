@@ -8,35 +8,43 @@
 import SwiftUI
 
 struct MainTabView: View {
-    var body: some View {
-        TabView {
-            FeedView()
-                .tabItem {
-                    Image(systemName: "house")
-                }
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }
-            Text("Upload Post")
-                .tabItem {
-                    Image(systemName: "plus.square")
-                }
-            Text("Notifications")
-                .tabItem {
-                    Image(systemName: "heart")
-                }
-            NavigationStack {
-                ProfileView(isOwnProfile: true, user: User.MOCK_USERS.first!)
-            }
-            .tabItem {
-                Image(systemName: "person")
-            }
+  let user: User
+  
+  @State private var selectedIndex = 0
+  var body: some View {
+    TabView(selection: $selectedIndex) {
+      FeedView()
+        .tabItem {
+          Image(systemName: "house")
         }
-        .accentColor(.black)
+        .tag(0)
+      SearchView()
+        .tabItem {
+          Image(systemName: "magnifyingglass")
+        }
+        .tag(1)
+      UploadPostView(tabIndex: $selectedIndex)
+        .tabItem {
+          Image(systemName: "plus.square")
+        }
+        .tag(2)
+      Text("Notifications")
+        .tabItem {
+          Image(systemName: "heart")
+        }
+        .tag(3)
+      NavigationStack {
+        ProfileView(isCurrentUserProfile: true, user: user)
+      }
+      .tabItem {
+        Image(systemName: "person")
+      }
+      .tag(4)
     }
+    .accentColor(.black)
+  }
 }
 
 #Preview {
-    MainTabView()
+  MainTabView(user: User.MOCK_USERS.first!)
 }
