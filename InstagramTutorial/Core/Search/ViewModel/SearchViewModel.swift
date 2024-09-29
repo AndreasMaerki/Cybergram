@@ -20,5 +20,6 @@ class SearchViewModel: ObservableObject {
   func fetchAllUsers() async throws {
 //    users = User.MOCK_USERS
     users = try await UserService.fetchAllUsers()
+    print(users)
   }
 }

@@ -23,6 +23,7 @@
 		C09681EF2CA8A25D00567707 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681EE2CA8A25D00567707 /* ImageUploader.swift */; };
 		C09681F22CA95A2100567707 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681F12CA95A2100567707 /* ErrorAlertModifier.swift */; };
 		C09681F52CA9610000567707 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C09681F42CA9610000567707 /* Kingfisher */; };
+		C09681F72CA9668000567707 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681F62CA9668000567707 /* CircularProfileImageView.swift */; };
 		C0A41A172BE509C300DC8BCC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A162BE509C300DC8BCC /* LoginView.swift */; };
 		C0A41A192BE50C6800DC8BCC /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A182BE50C6800DC8BCC /* LoginTextField.swift */; };
 		C0A41A1B2BE5120B00DC8BCC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A1A2BE5120B00DC8BCC /* LoginButton.swift */; };
@@ -68,6 +69,7 @@
 		C09681EC2CA588B000567707 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		C09681EE2CA8A25D00567707 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		C09681F12CA95A2100567707 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
+		C09681F62CA9668000567707 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		C0A41A162BE509C300DC8BCC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C0A41A182BE50C6800DC8BCC /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C0A41A1A2BE5120B00DC8BCC /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				C08B214A2BEE76630029A503 /* PostGridView.swift */,
+				C09681F62CA9668000567707 /* CircularProfileImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				C08B21442BEE535D0029A503 /* User.swift in Sources */,
 				C09681F22CA95A2100567707 /* ErrorAlertModifier.swift in Sources */,
 				C08B214B2BEE76630029A503 /* PostGridView.swift in Sources */,
+				C09681F72CA9668000567707 /* CircularProfileImageView.swift in Sources */,
 				C0B7606D2C1C2D660001189B /* UploadPostViewmodel.swift in Sources */,
 				C09681EF2CA8A25D00567707 /* ImageUploader.swift in Sources */,
 				C0CD9A2F2CA58479006BCAE8 /* EditProfileRowView.swift in Sources */,

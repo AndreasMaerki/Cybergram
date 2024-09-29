@@ -24,7 +24,7 @@ struct ProfileView: View {
       VStack {
         VStack(spacing: 10) {
           HStack {
-            profileImage
+            CircularProfileImageView(user: user, size: .large)
             Spacer()
             HStack(spacing: 42) {
               statStack(count: 3, description: "Post")
@@ -65,14 +65,6 @@ struct ProfileView: View {
     }
   }
 
-  private var profileImage: some View {
-    Image(user.profileImageURL ?? "")
-      .resizable()
-      .scaledToFill()
-      .frame(width: 80, height: 80)
-      .clipShape(.circle)
-  }
-
   private var nameAndBio: some View {
     VStack(alignment: .leading, spacing: 4) {
       if let fullName = user.fullName {
@@ -107,7 +99,7 @@ struct ProfileView: View {
     .padding()
   }
 
-
+  
   private func statStack(count: Int, description: String) -> some View {
     VStack {
       Text("\(count)")

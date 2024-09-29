@@ -11,7 +11,7 @@ struct User: Identifiable, Codable, Hashable {
   let id: String
   
   var userName: String
-  var profileImageURL: String?
+  var profileImageUrl: String?
   var fullName: String?
   var bio: String?
   let email: String
@@ -26,7 +26,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Andy",
-      profileImageURL: "veder",
+      profileImageUrl: "veder",
       fullName: "Anreas Maerki",
       bio: "Hello there",
       email: "a@b.ch"
@@ -34,7 +34,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Phil",
-      profileImageURL: "cyborg",
+      profileImageUrl: "cyborg",
       fullName: "Phil Speicher",
       bio: "Hello there",
       email: "b@b.ch"
@@ -42,7 +42,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Immotep",
-      profileImageURL: "kairo2100",
+      profileImageUrl: "kairo2100",
       fullName: "Immotep Lamahan",
       bio: "Hello there, Pharao of Egypt",
       email: "c@b.ch"
@@ -50,7 +50,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Siren",
-      profileImageURL: "waterrasta",
+      profileImageUrl: "waterrasta",
       fullName: "Serena Sing",
       bio: "From the deep",
       email: "d@b.ch"
@@ -58,7 +58,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Android",
-      profileImageURL: "roofgun",
+      profileImageUrl: "roofgun",
       fullName: "Electric Sheep",
       bio: "From the sheep",
       email: "e@b.ch"
