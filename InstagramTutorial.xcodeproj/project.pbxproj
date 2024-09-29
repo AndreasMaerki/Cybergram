@@ -31,7 +31,7 @@
 		C0A41A212BE5226300DC8BCC /* AddUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A202BE5226300DC8BCC /* AddUserNameView.swift */; };
 		C0A41A232BE525BD00DC8BCC /* CustomTextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A222BE525BD00DC8BCC /* CustomTextStyles.swift */; };
 		C0B7606B2C1B29C60001189B /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7606A2C1B29C60001189B /* UploadPostView.swift */; };
-		C0B7606D2C1C2D660001189B /* UploadPostViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7606C2C1C2D660001189B /* UploadPostViewmodel.swift */; };
+		C0B7606D2C1C2D660001189B /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7606C2C1C2D660001189B /* UploadPostViewModel.swift */; };
 		C0B7606F2C1C3FEA0001189B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B7606E2C1C3FEA0001189B /* GoogleService-Info.plist */; };
 		C0B760722C1C40E70001189B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C0B760712C1C40E70001189B /* FirebaseAuth */; };
 		C0B760742C1C40E70001189B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C0B760732C1C40E70001189B /* FirebaseFirestore */; };
@@ -77,7 +77,7 @@
 		C0A41A202BE5226300DC8BCC /* AddUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserNameView.swift; sourceTree = "<group>"; };
 		C0A41A222BE525BD00DC8BCC /* CustomTextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextStyles.swift; sourceTree = "<group>"; };
 		C0B7606A2C1B29C60001189B /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
-		C0B7606C2C1C2D660001189B /* UploadPostViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewmodel.swift; sourceTree = "<group>"; };
+		C0B7606C2C1C2D660001189B /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		C0B7606E2C1C3FEA0001189B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0B7607A2C1C450E0001189B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C0B7607E2C1C66520001189B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +192,22 @@
 				C09681F12CA95A2100567707 /* ErrorAlertModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		C09681F82CA984E700567707 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0B7606A2C1B29C60001189B /* UploadPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C09681F92CA984F100567707 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0B7606C2C1C2D660001189B /* UploadPostViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0B760792C1C44E80001189B /* Service */ = {
@@ -344,8 +360,8 @@
 		C0FB25702BDA836D007170DC /* UploadPost */ = {
 			isa = PBXGroup;
 			children = (
-				C0B7606A2C1B29C60001189B /* UploadPostView.swift */,
-				C0B7606C2C1C2D660001189B /* UploadPostViewmodel.swift */,
+				C09681F92CA984F100567707 /* ViewModel */,
+				C09681F82CA984E700567707 /* View */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -468,7 +484,7 @@
 				C09681F22CA95A2100567707 /* ErrorAlertModifier.swift in Sources */,
 				C08B214B2BEE76630029A503 /* PostGridView.swift in Sources */,
 				C09681F72CA9668000567707 /* CircularProfileImageView.swift in Sources */,
-				C0B7606D2C1C2D660001189B /* UploadPostViewmodel.swift in Sources */,
+				C0B7606D2C1C2D660001189B /* UploadPostViewModel.swift in Sources */,
 				C09681EF2CA8A25D00567707 /* ImageUploader.swift in Sources */,
 				C0CD9A2F2CA58479006BCAE8 /* EditProfileRowView.swift in Sources */,
 				C0B7607F2C1C66520001189B /* ContentViewModel.swift in Sources */,

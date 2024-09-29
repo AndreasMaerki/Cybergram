@@ -11,7 +11,7 @@ import SwiftUI
 struct UploadPostView: View {
   @State private var caption = ""
   @State private var isPhotosPickerPresented = false
-  @StateObject var viewModel = UploadPostViewmodel()
+  @StateObject var viewModel = UploadPostViewModel()
   @Binding var tabIndex: Int
   
   var body: some View {
@@ -19,10 +19,7 @@ struct UploadPostView: View {
       // action tool bar
       HStack {
         Button {
-          caption = ""
-          viewModel.postPhoto = nil
-          viewModel.selectedPhoto = nil
-          tabIndex = 0
+          clearPostDataAndReturnToFeed()
         } label: {
           Text("Cancel")
         }
@@ -35,7 +32,10 @@ struct UploadPostView: View {
         Spacer()
         
         Button {
-          print("upload")
+          Task {
+            try await viewModel.uploadPost(caption: caption)
+            clearPostDataAndReturnToFeed()
+          }
         } label: {
           Text("Upload")
             .fontWeight(.semibold)
@@ -65,6 +65,13 @@ struct UploadPostView: View {
       isPresented: $isPhotosPickerPresented,
       selection: $viewModel.selectedPhoto
     )
+  }
+
+  private func clearPostDataAndReturnToFeed() {
+    caption = ""
+    viewModel.postPhoto = nil
+    viewModel.selectedPhoto = nil
+    tabIndex = 0
   }
 }
 
