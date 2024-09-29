@@ -18,12 +18,20 @@ struct SearchView: View {
           ForEach(viewModel.users) { user in
             NavigationLink(value: user) {
               HStack {
-                Image(systemName: "person.circle")
-                  .resizable()
-                  .scaledToFill()
-                  .foregroundColor(.gray)
-                  .frame(width: 40, height: 40)
-                  .clipShape(.circle)
+                if let profilePicture = user.profileImageURL {
+                  Image(profilePicture)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40)
+                    .clipShape(.circle)
+                } else {
+                  Image(systemName: "person.circle")
+                    .resizable()
+                    .scaledToFill()
+                    .foregroundColor(.gray)
+                    .frame(width: 40, height: 40)
+                    .clipShape(.circle)
+                }
 
                 VStack(alignment: .leading) {
                   Text(user.userName)

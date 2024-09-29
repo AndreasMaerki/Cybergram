@@ -26,10 +26,8 @@ class UploadPostViewmodel: ObservableObject {
       let item = item,
       let data = try? await item.loadTransferable(type: Data.self),
       let uiImage = UIImage(data: data)
-    else {
-      return
-    }
-    
+    else { return }
+
     postPhoto = Image(uiImage: uiImage)
   }
 }

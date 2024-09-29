@@ -18,6 +18,7 @@ class SearchViewModel: ObservableObject {
   
   @MainActor
   func fetchAllUsers() async throws {
+//    users = User.MOCK_USERS
     users = try await UserService.fetchAllUsers()
   }
 }

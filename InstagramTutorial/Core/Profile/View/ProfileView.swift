@@ -61,7 +61,7 @@ struct ProfileView: View {
       }
     }
     .fullScreenCover(isPresented: $showEditProfile) {
-      Text("Edit Profile")
+      EditProfileView(user: user)
     }
   }
 
@@ -83,8 +83,6 @@ struct ProfileView: View {
       if let bio = user.bio {
         Text(bio)
       }
-
-      Text(user.userName)
     }
     .font(.footnote)
     .frame(maxWidth: .infinity, alignment: .leading)
