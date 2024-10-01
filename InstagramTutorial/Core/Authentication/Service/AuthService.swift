@@ -34,14 +34,13 @@ class AuthService {
   func loadUserData() async throws {
     userSession = Auth.auth().currentUser
     guard let currentUid = userSession?.uid else { return }
-    let snapshot = try await usersCollection.document(currentUid).getDocument()
 
-    if let data = snapshot.data() {
-      Logger.firebase.info("Snapshot data is: \(data)")
-      currentUser = try snapshot.data(as: User.self)
-    } else {
-      Logger.firebase.error("No data for user found")
+    do {
+      currentUser = try await UserService.fetchUser(withId: currentUid)
+    } catch {
+      Logger.firebase.error("No data for user \(error.localizedDescription)")
       signout() // clear data or app might misbehave
+      throw error
     }
   }
 

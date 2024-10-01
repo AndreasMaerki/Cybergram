@@ -13,7 +13,7 @@ struct Post: Identifiable, Codable, Hashable {
   var likes: Int
   let imageUrl: String
   let timestamp: Date
-  let user: User?
+  var user: User?
 }
 
 extension Post {

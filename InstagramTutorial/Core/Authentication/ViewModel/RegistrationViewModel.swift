@@ -7,9 +7,10 @@ class RegistrationViewModel: ObservableObject {
 
   func createUser() async throws {
     try await AuthService.shared.createUser(email: email, password: password, userName: userName)
-    clearData()
+    await clearData()
   }
 
+  @MainActor
   private func clearData() {
     userName = ""
     email = ""

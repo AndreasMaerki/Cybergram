@@ -24,6 +24,7 @@
 		C09681F22CA95A2100567707 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681F12CA95A2100567707 /* ErrorAlertModifier.swift */; };
 		C09681F52CA9610000567707 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C09681F42CA9610000567707 /* Kingfisher */; };
 		C09681F72CA9668000567707 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681F62CA9668000567707 /* CircularProfileImageView.swift */; };
+		C09681FD2CAC2CC800567707 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681FC2CAC2CC800567707 /* FeedViewModel.swift */; };
 		C0A41A172BE509C300DC8BCC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A162BE509C300DC8BCC /* LoginView.swift */; };
 		C0A41A192BE50C6800DC8BCC /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A182BE50C6800DC8BCC /* LoginTextField.swift */; };
 		C0A41A1B2BE5120B00DC8BCC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A1A2BE5120B00DC8BCC /* LoginButton.swift */; };
@@ -70,6 +71,7 @@
 		C09681EE2CA8A25D00567707 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		C09681F12CA95A2100567707 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
 		C09681F62CA9668000567707 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		C09681FC2CAC2CC800567707 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		C0A41A162BE509C300DC8BCC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C0A41A182BE50C6800DC8BCC /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C0A41A1A2BE5120B00DC8BCC /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -210,6 +212,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C09681FA2CAC2C9300567707 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				C01A80C32BDB93CA00C288A5 /* FeedView.swift */,
+				C01A80C52BDB93D300C288A5 /* FeedCell.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		C09681FB2CAC2CA600567707 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C09681FC2CAC2CC800567707 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C0B760792C1C44E80001189B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,8 +289,8 @@
 		C0FB25672BDA82AE007170DC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C08B21492BEE764E0029A503 /* Components */,
 				C0FB256A2BDA831C007170DC /* Authentication */,
+				C08B21492BEE764E0029A503 /* Components */,
 				C0FB256B2BDA8329007170DC /* Feed */,
 				C0FB25712BDA83BA007170DC /* Profile */,
 				C0FB256D2BDA8339007170DC /* Root */,
@@ -313,8 +332,8 @@
 		C0FB256B2BDA8329007170DC /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				C01A80C32BDB93CA00C288A5 /* FeedView.swift */,
-				C01A80C52BDB93D300C288A5 /* FeedCell.swift */,
+				C09681FB2CAC2CA600567707 /* ViewModel */,
+				C09681FA2CAC2C9300567707 /* VIew */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -495,6 +514,7 @@
 				C03CF2002BDA5A140006D6A1 /* InstagramTutorialApp.swift in Sources */,
 				C0A41A232BE525BD00DC8BCC /* CustomTextStyles.swift in Sources */,
 				C0CD9A2B2CA446CA006BCAE8 /* FilledProminentButton.swift in Sources */,
+				C09681FD2CAC2CC800567707 /* FeedViewModel.swift in Sources */,
 				C0A41A212BE5226300DC8BCC /* AddUserNameView.swift in Sources */,
 				C09681ED2CA588B000567707 /* EditProfileViewModel.swift in Sources */,
 				C0A41A1D2BE51E3100DC8BCC /* AddEmailView.swift in Sources */,

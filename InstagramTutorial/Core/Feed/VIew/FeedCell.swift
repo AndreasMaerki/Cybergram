@@ -7,6 +7,7 @@
 
 import OSLog
 import SwiftUI
+import Kingfisher
 
 struct FeedCell: View {
   var post: Post
@@ -16,7 +17,7 @@ struct FeedCell: View {
       userImageAndName
         .padding(.horizontal, 8)
 
-      Image(post.imageUrl)
+      KFImage(URL(string: post.imageUrl))
         .resizable()
         .scaledToFit()
         .clipShape(.rect)
