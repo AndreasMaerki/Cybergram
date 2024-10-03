@@ -25,6 +25,8 @@
 		C09681F52CA9610000567707 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C09681F42CA9610000567707 /* Kingfisher */; };
 		C09681F72CA9668000567707 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681F62CA9668000567707 /* CircularProfileImageView.swift */; };
 		C09681FD2CAC2CC800567707 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09681FC2CAC2CC800567707 /* FeedViewModel.swift */; };
+		C096833A2CAD8B3700567707 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09683392CAD8B3700567707 /* PostService.swift */; };
+		C096833E2CAD8F9A00567707 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096833D2CAD8F9A00567707 /* PostGridViewModel.swift */; };
 		C0A41A172BE509C300DC8BCC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A162BE509C300DC8BCC /* LoginView.swift */; };
 		C0A41A192BE50C6800DC8BCC /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A182BE50C6800DC8BCC /* LoginTextField.swift */; };
 		C0A41A1B2BE5120B00DC8BCC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A1A2BE5120B00DC8BCC /* LoginButton.swift */; };
@@ -72,6 +74,8 @@
 		C09681F12CA95A2100567707 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
 		C09681F62CA9668000567707 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		C09681FC2CAC2CC800567707 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		C09683392CAD8B3700567707 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		C096833D2CAD8F9A00567707 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		C0A41A162BE509C300DC8BCC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C0A41A182BE50C6800DC8BCC /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		C0A41A1A2BE5120B00DC8BCC /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -164,8 +168,8 @@
 		C08B21492BEE764E0029A503 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C08B214A2BEE76630029A503 /* PostGridView.swift */,
-				C09681F62CA9668000567707 /* CircularProfileImageView.swift */,
+				C096833C2CAD8F6B00567707 /* ViewModel */,
+				C096833B2CAD8F6400567707 /* View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,6 +229,23 @@
 			isa = PBXGroup;
 			children = (
 				C09681FC2CAC2CC800567707 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C096833B2CAD8F6400567707 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C08B214A2BEE76630029A503 /* PostGridView.swift */,
+				C09681F62CA9668000567707 /* CircularProfileImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C096833C2CAD8F6B00567707 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C096833D2CAD8F9A00567707 /* PostGridViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -315,6 +336,7 @@
 				C0B7606E2C1C3FEA0001189B /* GoogleService-Info.plist */,
 				C0B760892C207A110001189B /* UserService.swift */,
 				C09681EE2CA8A25D00567707 /* ImageUploader.swift */,
+				C09683392CAD8B3700567707 /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -491,6 +513,7 @@
 				C0CD9A2D2CA44AEF006BCAE8 /* EditProfileView.swift in Sources */,
 				C08B21402BEE4BDF0029A503 /* CreatePaswordView.swift in Sources */,
 				C0B7606B2C1B29C60001189B /* UploadPostView.swift in Sources */,
+				C096833A2CAD8B3700567707 /* PostService.swift in Sources */,
 				C0B7608A2C207A110001189B /* UserService.swift in Sources */,
 				C0A41A1B2BE5120B00DC8BCC /* LoginButton.swift in Sources */,
 				C01A80C62BDB93D300C288A5 /* FeedCell.swift in Sources */,
@@ -521,6 +544,7 @@
 				C0B7608E2C207CFA0001189B /* SearchViewModel.swift in Sources */,
 				C08B21422BEE4D4B0029A503 /* CompleteSignupView.swift in Sources */,
 				C01A80C42BDB93CA00C288A5 /* FeedView.swift in Sources */,
+				C096833E2CAD8F9A00567707 /* PostGridViewModel.swift in Sources */,
 				C08B21482BEE6BA70029A503 /* Post.swift in Sources */,
 				C0FB25732BDA8415007170DC /* MainTabView.swift in Sources */,
 				C0B760882C205EB00001189B /* Logger.swift in Sources */,

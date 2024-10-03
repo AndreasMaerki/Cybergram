@@ -13,11 +13,6 @@ struct ProfileView: View {
   var isCurrentUserProfile: Bool
   var user: User
 
-  var posts: [Post] {
-    return Post.MOCK_POST.filter {
-      $0.user?.userName == user.userName
-    }
-  }
 
   var body: some View {
     ScrollView {
@@ -45,7 +40,7 @@ struct ProfileView: View {
           Divider()
         }
 
-        PostGridView(posts: posts)
+        PostGridView(user: user)
       }
     }
     .navigationTitle("Profile")
