@@ -1,21 +1,14 @@
-//
-//  User.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 10.05.2024.
-//
-
 import Foundation
 
 struct User: Identifiable, Codable, Hashable {
   let id: String
-  
+
   var userName: String
   var profileImageUrl: String?
   var fullName: String?
   var bio: String?
   let email: String
-  
+
   var isCurrentUser: Bool {
     return id == AuthService.shared.currentUser?.id
   }

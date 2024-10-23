@@ -1,12 +1,5 @@
-//
-//  CircularProfileImageView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 29.09.2024.
-//
-
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 enum ProfileImageSize: CGFloat {
   case xSmall = 40
@@ -21,7 +14,8 @@ struct CircularProfileImageView: View {
 
   var body: some View {
     if let imageUrl = URL(string: user.profileImageUrl ?? ""),
-       imageUrl.scheme == "https" {
+       imageUrl.scheme == "https"
+    {
       KFImage(imageUrl)
         .resizable()
         .scaledToFill()

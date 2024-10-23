@@ -1,10 +1,3 @@
-//
-//  BorderedButton.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 25.04.24.
-//
-
 import SwiftUI
 
 struct BorderedButton: ButtonStyle {

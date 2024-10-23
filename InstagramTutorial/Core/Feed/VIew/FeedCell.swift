@@ -1,13 +1,6 @@
-//
-//  FeedCell.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 26.04.24.
-//
-
+import Kingfisher
 import OSLog
 import SwiftUI
-import Kingfisher
 
 struct FeedCell: View {
   var post: Post
@@ -33,7 +26,7 @@ struct FeedCell: View {
         .padding(.top, 1)
       HStack {
         Text("\(post.user?.userName ?? "") ").fontWeight(.semibold) +
-        Text(post.caption)
+          Text(post.caption)
       }
       .font(.footnote)
       .padding(.horizontal, 10)

@@ -1,13 +1,6 @@
-//
-//  EditProfileViewModel.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 26.09.2024.
-//
-
-import SwiftUI
 import _PhotosUI_SwiftUI
 import Firebase
+import SwiftUI
 
 @MainActor
 class EditProfileViewModel: ObservableObject {
@@ -54,7 +47,6 @@ class EditProfileViewModel: ObservableObject {
       let imageUrl = try? await ImageUploader.upload(image: uiImage)
       data["profileImageUrl"] = imageUrl
     }
-
 
     if !fullName.isEmpty && fullName != user.fullName {
       data["fullName"] = fullName

@@ -1,12 +1,5 @@
-//
-//  EditProfileView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 25.09.2024.
-//
-
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct EditProfileView: View {
   @Environment(\.dismiss) var dismiss

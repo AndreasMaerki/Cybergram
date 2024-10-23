@@ -1,10 +1,3 @@
-//
-//  LoginView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 03.05.2024.
-//
-
 import SwiftUI
 
 struct LoginView: View {

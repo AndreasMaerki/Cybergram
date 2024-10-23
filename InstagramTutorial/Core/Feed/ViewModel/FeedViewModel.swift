@@ -1,12 +1,5 @@
-//
-//  FeedViewModel.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 01.10.2024.
-//
-
-import Foundation
 import Firebase
+import Foundation
 
 @MainActor
 class FeedViewModel: ObservableObject {
@@ -25,7 +18,6 @@ class FeedViewModel: ObservableObject {
   }
 
   func fetchPosts(limit: Int) async throws {
-    self.posts = try await PostService.fechFeedPosts()
-
+    posts = try await PostService.fechFeedPosts()
   }
 }

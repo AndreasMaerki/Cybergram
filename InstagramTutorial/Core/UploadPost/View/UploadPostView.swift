@@ -1,10 +1,3 @@
-//
-//  UploadPostView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 13.06.2024.
-//
-
 import PhotosUI
 import SwiftUI
 
@@ -13,7 +6,7 @@ struct UploadPostView: View {
   @State private var isPhotosPickerPresented = false
   @StateObject var viewModel = UploadPostViewModel()
   @Binding var tabIndex: Int
-  
+
   var body: some View {
     VStack {
       // action tool bar
@@ -23,14 +16,14 @@ struct UploadPostView: View {
         } label: {
           Text("Cancel")
         }
-        
+
         Spacer()
-        
+
         Text("New Post")
           .fontWeight(.semibold)
-        
+
         Spacer()
-        
+
         Button {
           Task {
             try await viewModel.uploadPost(caption: caption)
@@ -42,7 +35,7 @@ struct UploadPostView: View {
         }
       }
       .padding(.horizontal)
-      
+
       // post image and caption
       HStack(spacing: 8) {
         if let image = viewModel.postPhoto {
@@ -52,7 +45,7 @@ struct UploadPostView: View {
             .frame(width: 100, height: 100)
             .clipped()
         }
-        
+
         TextField("Your caption...", text: $caption, axis: .vertical)
       }
       .padding()

@@ -1,44 +1,37 @@
-//
-//  AddUserNameView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 03.05.2024.
-//
-
 import SwiftUI
 
 struct AddUserNameView: View {
-    @EnvironmentObject var viewModel: RegistrationViewModel
+  @EnvironmentObject var viewModel: RegistrationViewModel
 
-    var body: some View {
-        VStack(spacing: 12) {
-            Text("Create username")
-                .font(.title2)
-                .fontWeight(.bold)
-                .padding(.top)
+  var body: some View {
+    VStack(spacing: 12) {
+      Text("Create username")
+        .font(.title2)
+        .fontWeight(.bold)
+        .padding(.top)
 
-            Text("You'll use this email to sign in to your account")
-                .modifier(.grayFootnote)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
+      Text("You'll use this email to sign in to your account")
+        .modifier(.grayFootnote)
+        .multilineTextAlignment(.center)
+        .padding(.horizontal)
 
-            TextField("User name", text: $viewModel.userName)
-                .textFieldStyle(.loginTextField)
-                .padding()
+      TextField("User name", text: $viewModel.userName)
+        .textFieldStyle(.loginTextField)
+        .padding()
 
-            NavigationLink {
-                CreatePaswordView()
-            } label: {
-                Text("Next")
-            }
-            .buttonStyle(.loginButton)
-            .padding(.horizontal)
+      NavigationLink {
+        CreatePaswordView()
+      } label: {
+        Text("Next")
+      }
+      .buttonStyle(.loginButton)
+      .padding(.horizontal)
 
-            Spacer()
-        }
+      Spacer()
     }
+  }
 }
 
 #Preview {
-    AddUserNameView()
+  AddUserNameView()
 }

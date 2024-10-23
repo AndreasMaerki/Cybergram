@@ -1,14 +1,7 @@
-//
-//  UploadPostViewmodel.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 14.06.2024.
-//
-
 import _PhotosUI_SwiftUI
+import Firebase
 import Foundation
 import SwiftUI
-import Firebase
 
 @MainActor
 class UploadPostViewModel: ObservableObject {
@@ -19,7 +12,7 @@ class UploadPostViewModel: ObservableObject {
       }
     }
   }
-  
+
   @Published var postPhoto: Image?
   private var uiImage: UIImage?
 
@@ -36,8 +29,9 @@ class UploadPostViewModel: ObservableObject {
   func uploadPost(caption: String) async throws {
     guard
       let uid = Auth.auth().currentUser?.uid,
-      let uiImage = self.uiImage,
-      let imageUrl = try await ImageUploader.upload(image: uiImage) else {
+      let uiImage = uiImage,
+      let imageUrl = try await ImageUploader.upload(image: uiImage)
+    else {
       return
     }
 

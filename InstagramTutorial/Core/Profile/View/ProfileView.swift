@@ -1,10 +1,3 @@
-//
-//  ProfileView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 25.04.24.
-//
-
 import SwiftUI
 
 struct ProfileView: View {
@@ -12,7 +5,6 @@ struct ProfileView: View {
 
   var isCurrentUserProfile: Bool
   var user: User
-
 
   var body: some View {
     ScrollView {
@@ -94,7 +86,6 @@ struct ProfileView: View {
     .padding()
   }
 
-  
   private func statStack(count: Int, description: String) -> some View {
     VStack {
       Text("\(count)")

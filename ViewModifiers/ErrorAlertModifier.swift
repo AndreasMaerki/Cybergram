@@ -1,10 +1,3 @@
-//
-//  ErrorAlertModifier.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 29.09.2024.
-//
-
 import SwiftUI
 
 // Define a view modifier that takes an error and presents an alert

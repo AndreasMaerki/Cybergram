@@ -1,15 +1,8 @@
-//
-//  MainTabView.swift
-//  InstagramTutorial
-//
-//  Created by Andreas Maerki on 25.04.24.
-//
-
 import SwiftUI
 
 struct MainTabView: View {
   let user: User
-  
+
   @State private var selectedIndex = 0
   var body: some View {
     TabView(selection: $selectedIndex) {
