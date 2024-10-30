@@ -8,7 +8,7 @@ struct FilledProminentButton: ButtonStyle {
       .foregroundStyle(.white)
       .frame(maxWidth: .infinity)
       .frame(height: 40)
-      .background(Color(.systemBlue))
+      .background(Color.buttonBackground)
       .cornerRadius(8)
   }
 }

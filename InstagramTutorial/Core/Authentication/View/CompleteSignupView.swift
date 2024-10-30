@@ -9,11 +9,18 @@ struct CompleteSignupView: View {
 
   var body: some View {
     VStack(spacing: 12) {
-      Text("Welcome to Instagram, \(viewModel.userName)")
+      Image(.cyberBrain)
+        .resizable()
+        .scaledToFit()
+        .foregroundStyle(Color.primaryForeground)
+        .padding(.horizontal, 24)
+        .padding(.top, 48)
+      Spacer()
+      Text("Welcome to Cybergram, \(viewModel.userName)")
         .font(.title2)
         .fontWeight(.bold)
 
-      Text("Click below to complete registration and start using instagram")
+      Text("Click below to complete registration and start using Cybergram")
         .modifier(.grayFootnote)
         .multilineTextAlignment(.center)
         .padding(.horizontal)
@@ -31,8 +38,11 @@ struct CompleteSignupView: View {
         Text("Complete sign up")
       }
       .buttonStyle(.loginButton)
-      .padding(.horizontal)
+      .padding()
     }
+    .background(
+      Color.primaryBackground
+    )
     .alert(isPresented: $showAlert) {
       .init(
         title: Text("Oops"),
@@ -45,4 +55,6 @@ struct CompleteSignupView: View {
 
 #Preview {
   CompleteSignupView()
+    .environmentObject(RegistrationViewModel())
+    .preferredColorScheme(.dark)
 }

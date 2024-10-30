@@ -10,31 +10,14 @@ struct LoginView: View {
     NavigationStack {
       VStack {
         Spacer()
-
-        Text("Instagram")
-          .font(.title)
-          .fontWeight(.bold)
-          .italic()
+        cyberLogo
 
         textFields
           .padding(.horizontal)
 
         forgotPasswordBTN
 
-        Button {
-          Task {
-            do {
-              try await viewModel.signIn()
-            } catch {
-              errorMessage = error.localizedDescription
-              showAlert = true
-            }
-          }
-        } label: {
-          Text("Login")
-        }
-        .buttonStyle(.loginButton)
-        .padding()
+        loginBTN
 
         orDivider
           .padding()
@@ -54,7 +37,18 @@ struct LoginView: View {
           dismissButton: .cancel()
         )
       }
+      .background(Color.primaryBackground)
     }
+  }
+
+  private var cyberLogo: some View {
+    Image(.cyberGram)
+      .resizable()
+      .renderingMode(.template)
+      .scaledToFit()
+      .padding(.horizontal, 36)
+      .padding(.vertical, 24)
+      .foregroundStyle(.primaryForeground)
   }
 
   private var textFields: some View {
@@ -64,7 +58,7 @@ struct LoginView: View {
 
       SecureField("Enter your password", text: $viewModel.password)
     }
-    .textFieldStyle(.loginTextField)
+    .textFieldStyle(.primaryTextField)
   }
 
   private var forgotPasswordBTN: some View {
@@ -76,6 +70,23 @@ struct LoginView: View {
         .padding(.trailing)
     }
     .frame(maxWidth: .infinity, alignment: .trailing)
+  }
+
+  private var loginBTN: some View {
+    Button {
+      Task {
+        do {
+          try await viewModel.signIn()
+        } catch {
+          errorMessage = error.localizedDescription
+          showAlert = true
+        }
+      }
+    } label: {
+      Text("Login")
+    }
+    .buttonStyle(.loginButton)
+    .padding()
   }
 
   private var orDivider: some View {
@@ -97,7 +108,6 @@ struct LoginView: View {
       Text("Continue with facebook")
         .font(.footnote)
         .fontWeight(.semibold)
-        .foregroundColor(Color(.systemBlue))
     }
   }
 

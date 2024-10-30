@@ -72,7 +72,7 @@ struct FeedCell: View {
       Spacer()
     }
     .imageScale(.large)
-    .foregroundColor(.black)
+    .foregroundStyle(.buttonBackground)
   }
 }
 

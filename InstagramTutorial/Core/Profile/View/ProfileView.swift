@@ -43,13 +43,14 @@ struct ProfileView: View {
           AuthService.shared.signout()
         } label: {
           Image(systemName: "line.3.horizontal")
-            .foregroundColor(.black)
+            .foregroundColor(.primaryForeground)
         }
       }
     }
     .fullScreenCover(isPresented: $showEditProfile) {
       EditProfileView(user: user)
     }
+    .background(Color.primaryBackground)
   }
 
   private var nameAndBio: some View {

@@ -10,20 +10,7 @@ struct SearchView: View {
         LazyVStack(spacing: 12) {
           ForEach(viewModel.users) { user in
             NavigationLink(value: user) {
-              HStack {
-                CircularProfileImageView(user: user, size: .xSmall)
-                VStack(alignment: .leading) {
-                  Text(user.userName)
-                    .fontWeight(.semibold)
-
-                  if let fullName = user.fullName {
-                    Text(fullName)
-                  }
-                }
-                .font(.footnote)
-                Spacer()
-              }
-              .padding(.horizontal)
+              searchCell(user: user)
             }
           }
           .padding(.top, 8)
@@ -35,6 +22,27 @@ struct SearchView: View {
         .navigationTitle("Explore")
         .navigationBarTitleDisplayMode(.inline)
       }
+      .background(Color.primaryBackground)
+    }
+  }
+
+  private func searchCell(user: User) -> some View {
+    VStack {
+      HStack {
+        CircularProfileImageView(user: user, size: .xSmall)
+        VStack(alignment: .leading) {
+          Text(user.userName)
+            .fontWeight(.semibold)
+
+          if let fullName = user.fullName {
+            Text(fullName)
+          }
+        }
+        .font(.footnote)
+        Spacer()
+      }
+      .padding(.horizontal)
+      .foregroundStyle(Color.primary)
     }
   }
 }

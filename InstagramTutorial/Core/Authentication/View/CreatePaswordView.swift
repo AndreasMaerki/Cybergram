@@ -16,7 +16,7 @@ struct CreatePaswordView: View {
         .padding(.horizontal)
 
       SecureField("Password", text: $viewModel.password)
-        .textFieldStyle(.loginTextField)
+        .textFieldStyle(.primaryTextField)
         .padding()
 
       NavigationLink {
@@ -29,9 +29,12 @@ struct CreatePaswordView: View {
 
       Spacer()
     }
+    .background(Color.primaryBackground)
   }
 }
 
 #Preview {
   CreatePaswordView()
+    .environmentObject(RegistrationViewModel())
+    .preferredColorScheme(.dark)
 }

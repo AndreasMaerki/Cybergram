@@ -5,11 +5,11 @@ struct BorderedButton: ButtonStyle {
     configuration.label
       .fontWeight(.semibold)
       .frame(maxWidth: .infinity)
-      .foregroundColor(.black)
+      .foregroundColor(.buttonBackground)
       .padding(8)
       .background(
         RoundedRectangle(cornerRadius: 6)
-          .stroke(.gray, lineWidth: 2)
+          .stroke(.buttonBackground, lineWidth: 2)
       )
   }
 }

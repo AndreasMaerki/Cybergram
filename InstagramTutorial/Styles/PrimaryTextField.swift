@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LoginTextField: TextFieldStyle {
+struct PrimaryTextField: TextFieldStyle {
   func _body(configuration: TextField<Self._Label>) -> some View {
     configuration
       .font(.subheadline)
@@ -10,12 +10,12 @@ struct LoginTextField: TextFieldStyle {
   }
 }
 
-extension TextFieldStyle where Self == LoginTextField {
-  static var loginTextField: Self { Self() }
+extension TextFieldStyle where Self == PrimaryTextField {
+  static var primaryTextField: Self { Self() }
 }
 
 #Preview {
   TextField("Your name", text: .constant(""))
-    .textFieldStyle(.loginTextField)
+    .textFieldStyle(.primaryTextField)
     .padding()
 }

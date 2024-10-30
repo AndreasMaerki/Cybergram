@@ -8,7 +8,7 @@ struct LoginButton: ButtonStyle {
       .foregroundStyle(.white)
       .frame(maxWidth: .infinity)
       .frame(height: 44)
-      .background(Color(.systemBlue))
+      .background(Color.buttonBackground)
       .cornerRadius(8)
   }
 }

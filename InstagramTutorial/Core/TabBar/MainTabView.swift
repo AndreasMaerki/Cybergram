@@ -21,7 +21,7 @@ struct MainTabView: View {
           Image(systemName: "plus.square")
         }
         .tag(2)
-      Text("Notifications")
+      Text("Notifications\nNot implemented")
         .tabItem {
           Image(systemName: "heart")
         }
@@ -34,7 +34,6 @@ struct MainTabView: View {
       }
       .tag(4)
     }
-    .accentColor(.black)
   }
 }
 

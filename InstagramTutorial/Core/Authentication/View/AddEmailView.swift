@@ -16,7 +16,7 @@ struct AddEmailView: View {
         .padding(.horizontal)
 
       TextField("Email", text: $viewModel.email)
-        .textFieldStyle(.loginTextField)
+        .textFieldStyle(.primaryTextField)
         .padding()
         .textInputAutocapitalization(.never)
 
@@ -30,9 +30,11 @@ struct AddEmailView: View {
 
       Spacer()
     }
+    .background(Color.primaryBackground)
   }
 }
 
 #Preview {
   AddEmailView()
+    .environmentObject(RegistrationViewModel())
 }

@@ -17,15 +17,18 @@ struct FeedView: View {
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
-          Text("Instagram")
-            .fontWeight(.semibold)
-            .italic()
+          Image(.cyberGram)
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: 100)
         }
         ToolbarItem(placement: .navigationBarTrailing) {
           Image(systemName: "paperplane")
             .imageScale(.large)
+            .foregroundStyle(.buttonBackground)
         }
       }
+      .background(Color.primaryBackground)
     }
   }
 }

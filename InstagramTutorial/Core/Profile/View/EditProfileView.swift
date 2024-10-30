@@ -16,7 +16,7 @@ struct EditProfileView: View {
       toolbar
       editProfilePic
       // edit profile info
-      VStack {
+      VStack(spacing: 24) {
         EditProfileRowView(
           title: "Full Name",
           placeholder: "Enter your name...",
@@ -29,9 +29,10 @@ struct EditProfileView: View {
           text: $viewModel.bio
         )
       }
-
+      .padding(.trailing)
       Spacer()
     }
+    .background(Color.primaryBackground)
   }
 
   private var toolbar: some View {

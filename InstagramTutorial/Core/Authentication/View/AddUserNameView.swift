@@ -16,7 +16,7 @@ struct AddUserNameView: View {
         .padding(.horizontal)
 
       TextField("User name", text: $viewModel.userName)
-        .textFieldStyle(.loginTextField)
+        .textFieldStyle(.primaryTextField)
         .padding()
 
       NavigationLink {
@@ -29,9 +29,11 @@ struct AddUserNameView: View {
 
       Spacer()
     }
+    .background(Color.primaryBackground)
   }
 }
 
 #Preview {
   AddUserNameView()
+    .environmentObject(RegistrationViewModel())
 }

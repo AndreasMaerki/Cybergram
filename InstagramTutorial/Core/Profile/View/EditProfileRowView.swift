@@ -18,7 +18,7 @@ struct EditProfileRowView: View {
         .frame(width: 100, alignment: .leading)
       VStack {
         TextField(placeholder ?? "", text: $text)
-        Divider()
+          .textFieldStyle(.primaryTextField)
       }
     }
     .font(.subheadline)
