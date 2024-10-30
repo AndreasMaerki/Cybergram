@@ -23,7 +23,7 @@ extension Post {
       ownerUid: UUID().uuidString,
       caption: "Whatever test caption",
       likes: 23,
-      imageUrl: "roofgun",
+      imageUrl: "https://picsum.photos/300",
       timestamp: Date(),
       user: User.MOCK_USERS[0]
     ),
@@ -32,7 +32,7 @@ extension Post {
       ownerUid: UUID().uuidString,
       caption: "Test caption for another user post",
       likes: 23,
-      imageUrl: "80ssunset",
+      imageUrl: "https://picsum.photos/300",
       timestamp: Date(),
       user: User.MOCK_USERS[2]
     ),
@@ -41,7 +41,7 @@ extension Post {
       ownerUid: UUID().uuidString,
       caption: "Nudelgericht für Feinschmecker",
       likes: 400,
-      imageUrl: "thinking",
+      imageUrl: "https://picsum.photos/300",
       timestamp: Date(),
       user: User.MOCK_USERS[1]
     ),
@@ -50,7 +50,7 @@ extension Post {
       ownerUid: UUID().uuidString,
       caption: "A gun is fun",
       likes: 2,
-      imageUrl: "blubberi",
+      imageUrl: "https://picsum.photos/300",
       timestamp: Date(),
       user: User.MOCK_USERS[3]
     ),
@@ -59,7 +59,7 @@ extension Post {
       ownerUid: UUID().uuidString,
       caption: "Standim on the rooftop like a boss",
       likes: 29,
-      imageUrl: "roofgun",
+      imageUrl: "https://picsum.photos/300",
       timestamp: Date(),
       user: User.MOCK_USERS[2]
     ),
