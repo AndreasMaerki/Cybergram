@@ -9,12 +9,9 @@ struct CompleteSignupView: View {
 
   var body: some View {
     VStack(spacing: 12) {
-      Image(.cyberBrain)
-        .resizable()
-        .scaledToFit()
-        .foregroundStyle(Color.primaryForeground)
-        .padding(.horizontal, 24)
-        .padding(.top, 48)
+      CyberBrainDrawingView()
+        .aspectRatio(contentMode: .fit)
+        .padding(24)
       Spacer()
       Text("Welcome to Cybergram, \(viewModel.userName)")
         .font(.title2)

@@ -14,6 +14,8 @@
 		C03CF2022BDA5A140006D6A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03CF2012BDA5A140006D6A1 /* ContentView.swift */; };
 		C03CF2042BDA5A150006D6A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03CF2032BDA5A150006D6A1 /* Assets.xcassets */; };
 		C03CF2072BDA5A150006D6A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03CF2062BDA5A150006D6A1 /* Preview Assets.xcassets */; };
+		C03F61CB2CD3C22D00EBA5BF /* CyberBrainDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F61C82CD3C22D00EBA5BF /* CyberBrainDrawingView.swift */; };
+		C03F61CC2CD3C22D00EBA5BF /* CyberBrainShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F61C92CD3C22D00EBA5BF /* CyberBrainShape.swift */; };
 		C08B21402BEE4BDF0029A503 /* CreatePaswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B213F2BEE4BDF0029A503 /* CreatePaswordView.swift */; };
 		C08B21422BEE4D4B0029A503 /* CompleteSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B21412BEE4D4B0029A503 /* CompleteSignupView.swift */; };
 		C08B21442BEE535D0029A503 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B21432BEE535D0029A503 /* User.swift */; };
@@ -64,6 +66,8 @@
 		C03CF2012BDA5A140006D6A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C03CF2032BDA5A150006D6A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C03CF2062BDA5A150006D6A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C03F61C82CD3C22D00EBA5BF /* CyberBrainDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberBrainDrawingView.swift; sourceTree = "<group>"; };
+		C03F61C92CD3C22D00EBA5BF /* CyberBrainShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberBrainShape.swift; sourceTree = "<group>"; };
 		C08B213F2BEE4BDF0029A503 /* CreatePaswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePaswordView.swift; sourceTree = "<group>"; };
 		C08B21412BEE4D4B0029A503 /* CompleteSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignupView.swift; sourceTree = "<group>"; };
 		C08B21432BEE535D0029A503 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		C03CF1FE2BDA5A140006D6A1 /* InstagramTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				C03F61CA2CD3C22D00EBA5BF /* CyberBrainAnimation */,
 				C0FB25762BDA8FD9007170DC /* Styles */,
 				C0FB25682BDA82B1007170DC /* App */,
 				C0FB25672BDA82AE007170DC /* Core */,
@@ -163,6 +168,15 @@
 				C08B21472BEE6BA70029A503 /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C03F61CA2CD3C22D00EBA5BF /* CyberBrainAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				C03F61C82CD3C22D00EBA5BF /* CyberBrainDrawingView.swift */,
+				C03F61C92CD3C22D00EBA5BF /* CyberBrainShape.swift */,
+			);
+			path = CyberBrainAnimation;
 			sourceTree = "<group>";
 		};
 		C08B21492BEE764E0029A503 /* Components */ = {
@@ -521,6 +535,8 @@
 				C0B7607B2C1C450E0001189B /* AuthService.swift in Sources */,
 				C0FB25752BDA86BB007170DC /* ProfileView.swift in Sources */,
 				C0A41A172BE509C300DC8BCC /* LoginView.swift in Sources */,
+				C03F61CB2CD3C22D00EBA5BF /* CyberBrainDrawingView.swift in Sources */,
+				C03F61CC2CD3C22D00EBA5BF /* CyberBrainShape.swift in Sources */,
 				C03CF2022BDA5A140006D6A1 /* ContentView.swift in Sources */,
 				C08B21442BEE535D0029A503 /* User.swift in Sources */,
 				C09681F22CA95A2100567707 /* ErrorAlertModifier.swift in Sources */,
