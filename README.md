@@ -25,7 +25,7 @@ The GoogleService-Info.plist file is not included in this repository to prevent 
 - Follow the setup instructions and download the GoogleService-Info.plist file.
 - Important: Do not share or commit this file to version control.
 
-## Add GoogleService-Info.plist to Xcode:
+### Add GoogleService-Info.plist to Xcode:
 - Download the GoogleService-Info.plist from Firebase and add it to the root of your Xcode project by dragging it into the Xcode file navigator.
 - Ensure that it is included in the app's target.
 
