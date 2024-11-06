@@ -20,7 +20,6 @@ struct CyberBrainDrawingView: View {
           lineJoin: .round
         )
       )
-//      .frame(width: spinnerSize, height: spinnerSize)
       .onAppear {
         withAnimation(.easeInOut(duration: animationTime)) {
           startDrawing = true
