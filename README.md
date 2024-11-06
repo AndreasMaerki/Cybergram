@@ -1,6 +1,7 @@
 # Instagram Clone - iOS App
 
 An iOS app built using SwiftUI, Firebase, and Firebase Authentication that mimics the core features of Instagram. This app allows users to sign up, log in, upload images, and view posts in a feed. The project is designed as a learning tool for myself and is neither feature complete nor intended for production use.
+An online tutorial by [AppStuff]([https://www.stephancodes.com/](https://www.youtube.com/@appstuff5778)) has inspired this project, but I have customized, and hopefully improved the code a bit here and there. 
 
 ## Features
 - User Authentication: Sign up, log in, and log out using Firebase Authentication.
