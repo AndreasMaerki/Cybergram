@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00AB1742DB1753600D73F57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C00AB1732DB1753600D73F57 /* GoogleService-Info.plist */; };
 		C01A80C42BDB93CA00C288A5 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A80C32BDB93CA00C288A5 /* FeedView.swift */; };
 		C01A80C62BDB93D300C288A5 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A80C52BDB93D300C288A5 /* FeedCell.swift */; };
 		C01A80C82BDBA1D000C288A5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A80C72BDBA1D000C288A5 /* SearchView.swift */; };
@@ -37,7 +38,6 @@
 		C0A41A232BE525BD00DC8BCC /* CustomTextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A41A222BE525BD00DC8BCC /* CustomTextStyles.swift */; };
 		C0B7606B2C1B29C60001189B /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7606A2C1B29C60001189B /* UploadPostView.swift */; };
 		C0B7606D2C1C2D660001189B /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7606C2C1C2D660001189B /* UploadPostViewModel.swift */; };
-		C0B7606F2C1C3FEA0001189B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B7606E2C1C3FEA0001189B /* GoogleService-Info.plist */; };
 		C0B760722C1C40E70001189B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C0B760712C1C40E70001189B /* FirebaseAuth */; };
 		C0B760742C1C40E70001189B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C0B760732C1C40E70001189B /* FirebaseFirestore */; };
 		C0B760762C1C40E70001189B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0B760752C1C40E70001189B /* FirebaseFirestoreSwift */; };
@@ -58,10 +58,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C00AB1732DB1753600D73F57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C01A80C32BDB93CA00C288A5 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		C01A80C52BDB93D300C288A5 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		C01A80C72BDBA1D000C288A5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		C03CF1FC2BDA5A140006D6A1 /* InstagramTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C03CF1FC2BDA5A140006D6A1 /* Cybergram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cybergram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03CF1FF2BDA5A140006D6A1 /* InstagramTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTutorialApp.swift; sourceTree = "<group>"; };
 		C03CF2012BDA5A140006D6A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C03CF2032BDA5A150006D6A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		C0A41A222BE525BD00DC8BCC /* CustomTextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextStyles.swift; sourceTree = "<group>"; };
 		C0B7606A2C1B29C60001189B /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		C0B7606C2C1C2D660001189B /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
-		C0B7606E2C1C3FEA0001189B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0B7607A2C1C450E0001189B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C0B7607E2C1C66520001189B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		C0B760812C1C75030001189B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				C09681F02CA959FF00567707 /* ViewModifiers */,
-				C03CF1FE2BDA5A140006D6A1 /* InstagramTutorial */,
+				C03CF1FE2BDA5A140006D6A1 /* Cybergram */,
 				C03CF1FD2BDA5A140006D6A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,12 +132,12 @@
 		C03CF1FD2BDA5A140006D6A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C03CF1FC2BDA5A140006D6A1 /* InstagramTutorial.app */,
+				C03CF1FC2BDA5A140006D6A1 /* Cybergram.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C03CF1FE2BDA5A140006D6A1 /* InstagramTutorial */ = {
+		C03CF1FE2BDA5A140006D6A1 /* Cybergram */ = {
 			isa = PBXGroup;
 			children = (
 				C03F61CA2CD3C22D00EBA5BF /* CyberBrainAnimation */,
@@ -150,7 +150,7 @@
 				C03CF2032BDA5A150006D6A1 /* Assets.xcassets */,
 				C03CF2052BDA5A150006D6A1 /* Preview Content */,
 			);
-			path = InstagramTutorial;
+			path = Cybergram;
 			sourceTree = "<group>";
 		};
 		C03CF2052BDA5A150006D6A1 /* Preview Content */ = {
@@ -347,7 +347,7 @@
 		C0FB25692BDA82DA007170DC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C0B7606E2C1C3FEA0001189B /* GoogleService-Info.plist */,
+				C00AB1732DB1753600D73F57 /* GoogleService-Info.plist */,
 				C0B760892C207A110001189B /* UserService.swift */,
 				C09681EE2CA8A25D00567707 /* ImageUploader.swift */,
 				C09683392CAD8B3700567707 /* PostService.swift */,
@@ -445,9 +445,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C03CF1FB2BDA5A140006D6A1 /* InstagramTutorial */ = {
+		C03CF1FB2BDA5A140006D6A1 /* Cybergram */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C03CF20A2BDA5A150006D6A1 /* Build configuration list for PBXNativeTarget "InstagramTutorial" */;
+			buildConfigurationList = C03CF20A2BDA5A150006D6A1 /* Build configuration list for PBXNativeTarget "Cybergram" */;
 			buildPhases = (
 				C03CF1F82BDA5A140006D6A1 /* Sources */,
 				C03CF1F92BDA5A140006D6A1 /* Frameworks */,
@@ -457,7 +457,7 @@
 			);
 			dependencies = (
 			);
-			name = InstagramTutorial;
+			name = Cybergram;
 			packageProductDependencies = (
 				C0B760712C1C40E70001189B /* FirebaseAuth */,
 				C0B760732C1C40E70001189B /* FirebaseFirestore */,
@@ -466,7 +466,7 @@
 				C09681F42CA9610000567707 /* Kingfisher */,
 			);
 			productName = InstagramTutorial;
-			productReference = C03CF1FC2BDA5A140006D6A1 /* InstagramTutorial.app */;
+			productReference = C03CF1FC2BDA5A140006D6A1 /* Cybergram.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -484,7 +484,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C03CF1F72BDA5A140006D6A1 /* Build configuration list for PBXProject "InstagramTutorial" */;
+			buildConfigurationList = C03CF1F72BDA5A140006D6A1 /* Build configuration list for PBXProject "Cybergram" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -501,7 +501,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C03CF1FB2BDA5A140006D6A1 /* InstagramTutorial */,
+				C03CF1FB2BDA5A140006D6A1 /* Cybergram */,
 			);
 		};
 /* End PBXProject section */
@@ -513,7 +513,7 @@
 			files = (
 				C03CF2072BDA5A150006D6A1 /* Preview Assets.xcassets in Resources */,
 				C03CF2042BDA5A150006D6A1 /* Assets.xcassets in Resources */,
-				C0B7606F2C1C3FEA0001189B /* GoogleService-Info.plist in Resources */,
+				C00AB1742DB1753600D73F57 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,7 +697,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InstagramTutorial/Preview Content\"";
-				DEVELOPMENT_TEAM = U468D33LZ8;
+				DEVELOPMENT_TEAM = 8YCB8R4KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
@@ -711,7 +711,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andy.InstagramTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.Cybergram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -727,7 +727,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InstagramTutorial/Preview Content\"";
-				DEVELOPMENT_TEAM = U468D33LZ8;
+				DEVELOPMENT_TEAM = 8YCB8R4KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
@@ -741,7 +741,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andy.InstagramTutorial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andy.Cybergram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -752,7 +752,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C03CF1F72BDA5A140006D6A1 /* Build configuration list for PBXProject "InstagramTutorial" */ = {
+		C03CF1F72BDA5A140006D6A1 /* Build configuration list for PBXProject "Cybergram" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C03CF2082BDA5A150006D6A1 /* Debug */,
@@ -761,7 +761,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C03CF20A2BDA5A150006D6A1 /* Build configuration list for PBXNativeTarget "InstagramTutorial" */ = {
+		C03CF20A2BDA5A150006D6A1 /* Build configuration list for PBXNativeTarget "Cybergram" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C03CF20B2BDA5A150006D6A1 /* Debug */,
