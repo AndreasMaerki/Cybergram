@@ -3,18 +3,12 @@ import OSLog
 import SwiftUI
 
 struct FeedCell: View {
-  @ObservedObject var viewModel: FeedCellViewModel
+  @EnvironmentObject var viewModel: FeedViewModel
 
-  private var post: Post {
-    viewModel.post
-  }
+  var post: Post
 
   private var didLike: Bool {
-    viewModel.post.didLike ?? false
-  }
-
-  init(post: Post) {
-    viewModel = .init(post: post)
+    post.didLike ?? false
   }
 
   var body: some View {
@@ -31,11 +25,10 @@ struct FeedCell: View {
         .padding(.horizontal, 8)
         .padding(.top, 4)
 
-      Text("\(post.likes) likes")
-        .font(.footnote)
-        .fontWeight(.semibold)
-        .padding(.horizontal, 10)
-        .padding(.top, 1)
+      if post.likes > 0 {
+        likesLabel
+      }
+
       HStack {
         Text("\(post.user?.userName ?? "") ").fontWeight(.semibold) +
           Text(post.caption)
@@ -48,6 +41,9 @@ struct FeedCell: View {
         .modifier(.grayFootnote)
         .padding(.horizontal, 10)
         .padding(.top, 1)
+    }
+    .task {
+      try? await viewModel.checkIfLiked(post)
     }
   }
 
@@ -91,17 +87,28 @@ struct FeedCell: View {
     .foregroundStyle(.buttonBackground)
   }
 
+  private var likesLabel: some View {
+    Text("\(post.likes) likes")
+      .font(.footnote)
+      .fontWeight(.semibold)
+      .padding(.horizontal, 10)
+      .padding(.top, 1)
+  }
+
   private func handleLike() {
     Task {
       if didLike {
-        try await viewModel.unlike()
+        try await viewModel.unlike(post)
       } else {
-        try await viewModel.like()
+        try await viewModel.like(post)
       }
     }
   }
 }
 
 #Preview {
-  FeedCell(post: Post.MOCK_POSTS[0])
+  FeedCell(post: Post.MOCK_POSTS.first!)
+    .environmentObject(
+      FeedViewModel(postService: MockPostService())
+    )
 }

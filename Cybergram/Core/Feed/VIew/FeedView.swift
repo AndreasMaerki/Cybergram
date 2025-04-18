@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FeedView: View {
   @EnvironmentObject var viewModel: FeedViewModel
+
   var body: some View {
     NavigationStack {
       ScrollView {
