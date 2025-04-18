@@ -3,7 +3,19 @@ import OSLog
 import SwiftUI
 
 struct FeedCell: View {
-  var post: Post
+  @ObservedObject var viewModel: FeedCellViewModel
+
+  private var post: Post {
+    viewModel.post
+  }
+
+  private var didLike: Bool {
+    viewModel.post.didLike ?? false
+  }
+
+  init(post: Post) {
+    viewModel = .init(post: post)
+  }
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -54,25 +66,39 @@ struct FeedCell: View {
   private var actionButtons: some View {
     HStack {
       Button {
-        Logger.viewCycle.info("liked")
+        handleLike()
       } label: {
-        Image(systemName: "heart")
+        Image(systemName: didLike ? "heart.fill" : "heart")
+          .imageScale(.large)
+          .foregroundStyle(didLike ? .red : .black)
       }
       Button {
-        Logger.viewCycle.info("comment")
+        Logger.statistics.info("comment")
       } label: {
         Image(systemName: "bubble.right")
+          .imageScale(.large)
       }
       Button {
-        Logger.viewCycle.info("share")
+        Logger.statistics.info("share")
       } label: {
         Image(systemName: "paperplane")
+          .imageScale(.large)
       }
 
       Spacer()
     }
     .imageScale(.large)
     .foregroundStyle(.buttonBackground)
+  }
+
+  private func handleLike() {
+    Task {
+      if didLike {
+        try await viewModel.unlike()
+      } else {
+        try await viewModel.like()
+      }
+    }
   }
 }
 

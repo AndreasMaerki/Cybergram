@@ -14,6 +14,8 @@ struct Post: Identifiable, Codable, Hashable {
   let imageUrl: String
   let timestamp: Date
   var user: User?
+
+  var didLike: Bool? = false
 }
 
 extension Post {
