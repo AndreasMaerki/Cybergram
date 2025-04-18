@@ -10,7 +10,7 @@ struct User: Identifiable, Codable, Hashable {
   let email: String
 
   var isCurrentUser: Bool {
-    return id == AuthService.shared.currentUser?.id
+    id == AuthService.shared.currentUser?.id
   }
 }
 

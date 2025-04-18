@@ -32,7 +32,7 @@ class EditProfileViewModel: ObservableObject {
 
   func loadImage(fromItem item: PhotosPickerItem?) async {
     guard
-      let item = item,
+      let item,
       let data = try? await item.loadTransferable(type: Data.self),
       let uiImage = UIImage(data: data)
     else { return }
@@ -48,11 +48,11 @@ class EditProfileViewModel: ObservableObject {
       data["profileImageUrl"] = imageUrl
     }
 
-    if !fullName.isEmpty && fullName != user.fullName {
+    if !fullName.isEmpty, fullName != user.fullName {
       data["fullName"] = fullName
     }
 
-    if !bio.isEmpty && bio != user.bio {
+    if !bio.isEmpty, bio != user.bio {
       data["bio"] = bio
     }
 

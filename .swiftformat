@@ -7,3 +7,4 @@
 --wrapparameters before-first
 --wrapcollections before-first
 --enable isEmpty,wrapEnumCases,wrapSwitchCases
+--swiftversion 6.0
