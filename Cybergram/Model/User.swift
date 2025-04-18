@@ -19,7 +19,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Andy",
-      profileImageUrl: "veder",
+      profileImageUrl: "https://picsum.photos/100",
       fullName: "Anreas Maerki",
       bio: "Hello there",
       email: "a@b.ch"
@@ -27,7 +27,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Phil",
-      profileImageUrl: "cyborg",
+      profileImageUrl: "https://picsum.photos/100",
       fullName: "Phil Speicher",
       bio: "Hello there",
       email: "b@b.ch"
@@ -35,7 +35,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Immotep",
-      profileImageUrl: "kairo2100",
+      profileImageUrl: "https://picsum.photos/100",
       fullName: "Immotep Lamahan",
       bio: "Hello there, Pharao of Egypt",
       email: "c@b.ch"
@@ -43,7 +43,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Siren",
-      profileImageUrl: "waterrasta",
+      profileImageUrl: "https://picsum.photos/100",
       fullName: "Serena Sing",
       bio: "From the deep",
       email: "d@b.ch"
@@ -51,7 +51,7 @@ extension User {
     .init(
       id: UUID().uuidString,
       userName: "Android",
-      profileImageUrl: "roofgun",
+      profileImageUrl: "https://picsum.photos/100",
       fullName: "Electric Sheep",
       bio: "From the sheep",
       email: "e@b.ch"

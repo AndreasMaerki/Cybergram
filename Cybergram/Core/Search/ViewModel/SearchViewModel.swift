@@ -3,7 +3,9 @@ import Foundation
 class SearchViewModel: ObservableObject {
   @Published var users = [User]()
 
-  init() {
+  private let userService: UserServiceType
+  init(userService: UserServiceType = UserService()) {
+    self.userService = userService
     Task {
       try await fetchAllUsers()
     }
@@ -11,8 +13,7 @@ class SearchViewModel: ObservableObject {
 
   @MainActor
   func fetchAllUsers() async throws {
-//    users = User.MOCK_USERS
-    users = try await UserService.fetchAllUsers()
+    users = try await userService.fetchAllUsers()
     print(users)
   }
 }

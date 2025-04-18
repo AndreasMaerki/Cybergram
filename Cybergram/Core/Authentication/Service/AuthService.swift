@@ -10,10 +10,12 @@ class AuthService {
 
   static let shared = AuthService()
 
+  private let userService: UserService
   private let usersCollection: CollectionReference
 
-  private init() {
+  private init(userService: UserService = UserService()) {
     usersCollection = Firestore.firestore().collection("users")
+    self.userService = userService
     Task {
       try await loadUserData()
     }
@@ -36,7 +38,7 @@ class AuthService {
     guard let currentUid = userSession?.uid else { return }
 
     do {
-      currentUser = try await UserService.fetchUser(withId: currentUid)
+      currentUser = try await userService.fetchUser(withId: currentUid)
     } catch {
       Logger.firebase.error("No data for user \(error.localizedDescription)")
       signout() // clear data or app might misbehave

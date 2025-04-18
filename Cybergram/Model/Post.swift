@@ -17,7 +17,7 @@ struct Post: Identifiable, Codable, Hashable {
 }
 
 extension Post {
-  static var MOCK_POST: [Post] = [
+  static var MOCK_POSTS: [Post] = [
     .init(
       id: UUID().uuidString,
       ownerUid: UUID().uuidString,

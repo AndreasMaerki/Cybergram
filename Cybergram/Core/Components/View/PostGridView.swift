@@ -2,11 +2,7 @@ import Kingfisher
 import SwiftUI
 
 struct PostGridView: View {
-  @StateObject var viewModel: PostGridViewModel
-
-  init(user: User) {
-    _viewModel = .init(wrappedValue: .init(user: user))
-  }
+  @EnvironmentObject var viewModel: PostGridViewModel
 
   private let gridItems: [GridItem] = [
     .init(.flexible(), spacing: 1),
@@ -26,5 +22,11 @@ struct PostGridView: View {
 }
 
 #Preview {
-  PostGridView(user: User.MOCK_USERS.first!)
+  PostGridView()
+    .environmentObject(
+      PostGridViewModel(
+        user: User.MOCK_USERS.first!,
+        postService: MockPostService()
+      )
+    )
 }

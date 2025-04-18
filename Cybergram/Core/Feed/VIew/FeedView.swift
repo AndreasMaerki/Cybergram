@@ -1,13 +1,12 @@
 import SwiftUI
 
 struct FeedView: View {
-  @StateObject var viewmodel = FeedViewModel()
-
+  @EnvironmentObject var viewModel: FeedViewModel
   var body: some View {
     NavigationStack {
       ScrollView {
         LazyVStack(spacing: 32) {
-          ForEach(viewmodel.posts) { post in
+          ForEach(viewModel.posts) { post in
             FeedCell(post: post)
           }
         }
@@ -35,4 +34,5 @@ struct FeedView: View {
 
 #Preview {
   FeedView()
+    .environmentObject(FeedViewModel(postService: MockPostService()))
 }

@@ -6,7 +6,10 @@ class FeedViewModel: ObservableObject {
   @Published var posts: [Post] = []
   @Published var error: Error?
 
-  init() {
+  private let postService: PostServiceType
+
+  init(postService: PostServiceType = PostService()) {
+    self.postService = postService
     Task {
       do {
         try await fetchPosts(limit: 20)
@@ -18,6 +21,6 @@ class FeedViewModel: ObservableObject {
   }
 
   func fetchPosts(limit: Int) async throws {
-    posts = try await PostService.fechFeedPosts()
+    posts = try await postService.fetchFeedPosts()
   }
 }
