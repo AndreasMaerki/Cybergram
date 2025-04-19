@@ -47,6 +47,7 @@ struct FeedCell: View {
       CommentsView()
         .presentationDetents([.fraction(0.6)])
         .presentationDragIndicator(.visible)
+        .environmentObject(CommentsViewModel(post: post))
     }
     .task {
       try? await viewModel.checkIfLiked(post)

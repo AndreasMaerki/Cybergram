@@ -9,11 +9,11 @@ enum ProfileImageSize: CGFloat {
 }
 
 struct CircularProfileImageView: View {
-  let user: User
+  let user: User?
   let size: ProfileImageSize
 
   var body: some View {
-    if let imageUrl = URL(string: user.profileImageUrl ?? ""),
+    if let imageUrl = URL(string: user?.profileImageUrl ?? ""),
        imageUrl.scheme == "https"
     {
       KFImage(imageUrl)
