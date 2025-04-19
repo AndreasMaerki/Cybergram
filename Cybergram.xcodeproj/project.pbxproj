@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -103,6 +103,10 @@
 		C0FB25742BDA86BB007170DC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C0FB25772BDA8FFD007170DC /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C0652F822DB3B24700A0A8FE /* Comments */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Comments; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C03CF1F92BDA5A140006D6A1 /* Frameworks */ = {
@@ -324,6 +328,7 @@
 		C0FB25672BDA82AE007170DC /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C0652F822DB3B24700A0A8FE /* Comments */,
 				C0FB256A2BDA831C007170DC /* Authentication */,
 				C08B21492BEE764E0029A503 /* Components */,
 				C0FB256B2BDA8329007170DC /* Feed */,
@@ -456,6 +461,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C0652F822DB3B24700A0A8FE /* Comments */,
 			);
 			name = Cybergram;
 			packageProductDependencies = (

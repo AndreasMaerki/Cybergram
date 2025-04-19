@@ -4,6 +4,7 @@ import SwiftUI
 
 struct FeedCell: View {
   @EnvironmentObject var viewModel: FeedViewModel
+  @State private var showComments = false
 
   var post: Post
 
@@ -42,6 +43,11 @@ struct FeedCell: View {
         .padding(.horizontal, 10)
         .padding(.top, 1)
     }
+    .sheet(isPresented: $showComments) {
+      CommentsView()
+        .presentationDetents([.fraction(0.6)])
+        .presentationDragIndicator(.visible)
+    }
     .task {
       try? await viewModel.checkIfLiked(post)
     }
@@ -65,20 +71,20 @@ struct FeedCell: View {
         handleLike()
       } label: {
         Image(systemName: didLike ? "heart.fill" : "heart")
-          .imageScale(.large)
-          .foregroundStyle(didLike ? .red : .black)
+          .foregroundStyle(didLike ? .red : Color.primary)
       }
       Button {
         Logger.statistics.info("comment")
+        showComments.toggle()
       } label: {
         Image(systemName: "bubble.right")
-          .imageScale(.large)
+          .foregroundStyle(Color.primary)
       }
       Button {
         Logger.statistics.info("share")
       } label: {
         Image(systemName: "paperplane")
-          .imageScale(.large)
+          .foregroundStyle(Color.primary)
       }
 
       Spacer()
