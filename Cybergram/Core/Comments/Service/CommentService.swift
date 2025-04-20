@@ -8,20 +8,18 @@ protocol CommentServiceType {
 }
 
 struct CommentService: CommentServiceType {
-  let postsCollection = Firestore.firestore().collection("posts")
-
   func uploadComment(_ comment: Comment) async throws {
     guard let commentData = try? Firestore.Encoder().encode(comment) else {
       return
     }
-    try await postsCollection
+    try await FirConstants.postCollection
       .document(comment.postId)
       .collection("post-comments")
       .addDocument(data: commentData)
   }
 
   func fetchComments(forPostWithId postId: Post.ID) async throws -> [Comment] {
-    let snapshot = try await postsCollection
+    let snapshot = try await FirConstants.postCollection
       .document(postId)
       .collection("post-comments")
       .order(by: "timestamp", descending: true)

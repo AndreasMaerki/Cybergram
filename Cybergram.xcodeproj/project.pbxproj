@@ -49,6 +49,7 @@
 		C0B760882C205EB00001189B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B760872C205EB00001189B /* Logger.swift */; };
 		C0B7608A2C207A110001189B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B760892C207A110001189B /* UserService.swift */; };
 		C0B7608E2C207CFA0001189B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7608D2C207CFA0001189B /* SearchViewModel.swift */; };
+		C0B8959B2DB5183500601578 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8959A2DB5183500601578 /* Date.swift */; };
 		C0CD9A2B2CA446CA006BCAE8 /* FilledProminentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD9A2A2CA446CA006BCAE8 /* FilledProminentButton.swift */; };
 		C0CD9A2D2CA44AEF006BCAE8 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD9A2C2CA44AEF006BCAE8 /* EditProfileView.swift */; };
 		C0CD9A2F2CA58479006BCAE8 /* EditProfileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD9A2E2CA58479006BCAE8 /* EditProfileRowView.swift */; };
@@ -96,6 +97,7 @@
 		C0B760872C205EB00001189B /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		C0B760892C207A110001189B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C0B7608D2C207CFA0001189B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C0B8959A2DB5183500601578 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C0CD9A2A2CA446CA006BCAE8 /* FilledProminentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledProminentButton.swift; sourceTree = "<group>"; };
 		C0CD9A2C2CA44AEF006BCAE8 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		C0CD9A2E2CA58479006BCAE8 /* EditProfileRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRowView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C0652F822DB3B24700A0A8FE /* Comments */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Comments; sourceTree = "<group>"; };
+		C0B8959C2DB51B3300601578 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 		C03CF1FE2BDA5A140006D6A1 /* Cybergram */ = {
 			isa = PBXGroup;
 			children = (
+				C0B8959C2DB51B3300601578 /* Utils */,
 				C03F61CA2CD3C22D00EBA5BF /* CyberBrainAnimation */,
 				C0FB25762BDA8FD9007170DC /* Styles */,
 				C0FB25682BDA82B1007170DC /* App */,
@@ -321,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				C0B760872C205EB00001189B /* Logger.swift */,
+				C0B8959A2DB5183500601578 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C0652F822DB3B24700A0A8FE /* Comments */,
+				C0B8959C2DB51B3300601578 /* Utils */,
 			);
 			name = Cybergram;
 			packageProductDependencies = (
@@ -555,6 +561,7 @@
 				C0CD9A2F2CA58479006BCAE8 /* EditProfileRowView.swift in Sources */,
 				C0B7607F2C1C66520001189B /* ContentViewModel.swift in Sources */,
 				C0B760842C202F540001189B /* LoginViewModel.swift in Sources */,
+				C0B8959B2DB5183500601578 /* Date.swift in Sources */,
 				C0B760822C1C75030001189B /* RegistrationViewModel.swift in Sources */,
 				C0A41A192BE50C6800DC8BCC /* PrimaryTextField.swift in Sources */,
 				C01A80C82BDBA1D000C288A5 /* SearchView.swift in Sources */,

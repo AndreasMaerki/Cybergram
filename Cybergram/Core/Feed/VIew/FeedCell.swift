@@ -38,7 +38,7 @@ struct FeedCell: View {
       .padding(.horizontal, 10)
       .padding(.top, 0.5)
 
-      Text("6h ago")
+      Text("\(post.timestamp.timestampString()) ago")
         .modifier(.grayFootnote)
         .padding(.horizontal, 10)
         .padding(.top, 1)

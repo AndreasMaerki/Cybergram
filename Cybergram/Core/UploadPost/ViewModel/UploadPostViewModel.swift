@@ -35,7 +35,7 @@ class UploadPostViewModel: ObservableObject {
       return
     }
 
-    let postRef = Firestore.firestore().collection("posts").document()
+    let postRef = FirConstants.postCollection.document()
 
     let post = Post(
       id: postRef.documentID,

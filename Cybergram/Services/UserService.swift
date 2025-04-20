@@ -23,12 +23,12 @@ class UserService: UserServiceType {
   }
 
   func fetchAllUsers() async throws -> [User] {
-    let snapshot = try await Firestore.firestore().collection("users").getDocuments()
+    let snapshot = try await FirConstants.userCollection.getDocuments()
     return snapshot.documents.compactMap { try? $0.data(as: User.self) }
   }
 
   func fetchUser(withId id: String) async throws -> User? {
-    let snapshot = try await Firestore.firestore().collection("users").document(id).getDocument()
+    let snapshot = try await FirConstants.userCollection.document(id).getDocument()
     return try? snapshot.data(as: User.self)
   }
 }

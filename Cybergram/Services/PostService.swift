@@ -10,8 +10,8 @@ protocol PostServiceType {
 }
 
 struct PostService: PostServiceType {
-  private let postCollection = Firestore.firestore().collection("posts")
-  private let userCollection = Firestore.firestore().collection("users")
+  private let postCollection = FirConstants.postCollection
+  private let userCollection = FirConstants.userCollection
 
   func fetchFeedPosts() async throws -> [Post] {
     let snapshot = try await postCollection.getDocuments()

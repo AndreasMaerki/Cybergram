@@ -10,10 +10,8 @@ class AuthService {
   static let shared = AuthService()
 
   private let userService: UserService
-  private let usersCollection: CollectionReference
 
   private init(userService: UserService = UserService()) {
-    usersCollection = Firestore.firestore().collection("users")
     self.userService = userService
     Task {
       try await loadUserData()
@@ -56,7 +54,7 @@ class AuthService {
     UserService.shared.currentUser = user
     let encodedUser = try Firestore.Encoder().encode(user)
 
-    try await usersCollection.document(user.id).setData(encodedUser)
+    try await FirConstants.userCollection.document(user.id).setData(encodedUser)
 
     Logger.firebase.info("Did upload user data!")
   }
