@@ -9,7 +9,7 @@ struct Comment: Codable, Identifiable {
   let timestamp: Date
   let commentOwnerUid: String
 
-  let user: User?
+  var user: User?
 
   var id: String { commentId ?? UUID().uuidString }
 }

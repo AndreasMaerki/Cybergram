@@ -1,6 +1,7 @@
 import Firebase
 import Foundation
 
+@MainActor
 class CommentsViewModel: ObservableObject {
   @Published var comments: [Comment] = []
 
@@ -10,6 +11,7 @@ class CommentsViewModel: ObservableObject {
   init(post: Post, _ commentService: CommentServiceType = CommentService()) {
     self.post = post
     self.commentService = commentService
+    Task { try await fetchComments() }
   }
 
   func uploadComment(_ commentText: String) async throws {
@@ -23,9 +25,28 @@ class CommentsViewModel: ObservableObject {
       postId: post.id,
       timestamp: Date(),
       commentOwnerUid: uid,
-      user: nil
+      user: AuthService.shared.currentUser
     )
 
-    try await commentService.uploadComment(comment)
+    do {
+      comments.insert(comment, at: 0)
+      try await commentService.uploadComment(comment)
+    } catch {
+      comments.remove(at: 0)
+      print(error.localizedDescription)
+    }
+  }
+
+  func fetchComments() async throws {
+    comments = try await commentService.fetchComments(forPostWithId: post.id)
+    try await fetchUserDataForComments()
+  }
+
+  private func fetchUserDataForComments() async throws {
+    for i in 0 ..< comments.count {
+      let comment = comments[i]
+      let user = try await UserService().fetchUser(withId: comment.commentOwnerUid)
+      comments[i].user = user
+    }
   }
 }

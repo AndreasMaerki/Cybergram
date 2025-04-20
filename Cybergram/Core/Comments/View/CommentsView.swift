@@ -5,6 +5,10 @@ struct CommentsView: View {
   @EnvironmentObject private var viewModel: CommentsViewModel
   @Environment(\.dismiss) var dismiss
 
+  private var currentUser: User {
+    .MOCK_USERS[0]
+  }
+
   var body: some View {
     NavigationStack {
       VStack {
@@ -30,7 +34,7 @@ struct CommentsView: View {
 
   private var commentField: some View {
     HStack {
-      CircularProfileImageView(user: .MOCK_USERS[0], size: .xSmall)
+      CircularProfileImageView(user: currentUser, size: .xSmall)
 
       HStack {
         TextField("Add a comment", text: $commentText, axis: .vertical)
@@ -64,7 +68,6 @@ struct CommentsView: View {
     do {
       try await viewModel.uploadComment(commentText)
       commentText = ""
-      dismiss()
     } catch {
       // TODO: Error handling
       print(error.localizedDescription)
