@@ -6,7 +6,6 @@ import OSLog
 
 class AuthService {
   @Published var userSession: FirebaseAuth.User?
-  @Published var currentUser: User?
 
   static let shared = AuthService()
 
@@ -35,10 +34,10 @@ class AuthService {
 
   func loadUserData() async throws {
     userSession = Auth.auth().currentUser
-    guard let currentUid = userSession?.uid else { return }
+    guard (userSession?.uid) != nil else { return }
 
     do {
-      currentUser = try await userService.fetchUser(withId: currentUid)
+      try await UserService.shared.fetchCurrentUser()
     } catch {
       Logger.firebase.error("No data for user \(error.localizedDescription)")
       signout() // clear data or app might misbehave
@@ -49,14 +48,15 @@ class AuthService {
   func signout() {
     try? Auth.auth().signOut()
     userSession = nil
-    currentUser = nil
+    UserService.shared.currentUser = nil
   }
 
   private func uploadUserData(uid: String, userName: String, email: String) async throws {
-    currentUser = User(id: uid, userName: userName, email: email)
-    let encodedUser = try Firestore.Encoder().encode(currentUser!)
+    let user = User(id: uid, userName: userName, email: email)
+    UserService.shared.currentUser = user
+    let encodedUser = try Firestore.Encoder().encode(user)
 
-    try await usersCollection.document(currentUser!.id).setData(encodedUser)
+    try await usersCollection.document(user.id).setData(encodedUser)
 
     Logger.firebase.info("Did upload user data!")
   }

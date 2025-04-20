@@ -5,8 +5,8 @@ struct CommentsView: View {
   @EnvironmentObject private var viewModel: CommentsViewModel
   @Environment(\.dismiss) var dismiss
 
-  private var currentUser: User {
-    .MOCK_USERS[0]
+  private var currentUser: User? {
+    UserService.shared.currentUser
   }
 
   var body: some View {

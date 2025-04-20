@@ -8,7 +8,20 @@ protocol UserServiceType {
   func fetchUser(withId id: String) async throws -> User?
 }
 
-struct UserService: UserServiceType {
+class UserService: UserServiceType {
+  @Published var currentUser: User?
+
+  static let shared = UserService()
+
+  @MainActor
+  func fetchCurrentUser() async throws {
+    guard let uid = Auth.auth().currentUser?.uid else {
+      currentUser = nil
+      return
+    }
+    currentUser = try await fetchUser(withId: uid)
+  }
+
   func fetchAllUsers() async throws -> [User] {
     let snapshot = try await Firestore.firestore().collection("users").getDocuments()
     return snapshot.documents.compactMap { try? $0.data(as: User.self) }

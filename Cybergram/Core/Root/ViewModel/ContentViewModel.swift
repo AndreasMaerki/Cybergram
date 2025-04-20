@@ -22,7 +22,7 @@ class ContentViewModel: ObservableObject {
       }
       .store(in: &cancellables)
 
-    service.$currentUser
+    UserService.shared.$currentUser
       .receive(on: DispatchQueue.main)
       .sink { [weak self] currentUser in
         self?.currentUser = currentUser

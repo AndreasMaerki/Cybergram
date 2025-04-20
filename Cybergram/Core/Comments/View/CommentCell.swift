@@ -12,7 +12,7 @@ struct CommentCell: View {
           Text("6d")
             .foregroundStyle(.secondary)
         }
-        Text("Hi there is great")
+        Text(comment.text)
       }
       .font(.caption)
     }

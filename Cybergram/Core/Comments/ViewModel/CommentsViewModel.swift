@@ -25,7 +25,7 @@ class CommentsViewModel: ObservableObject {
       postId: post.id,
       timestamp: Date(),
       commentOwnerUid: uid,
-      user: AuthService.shared.currentUser
+      user: UserService.shared.currentUser
     )
 
     do {
@@ -33,7 +33,7 @@ class CommentsViewModel: ObservableObject {
       try await commentService.uploadComment(comment)
     } catch {
       comments.remove(at: 0)
-      print(error.localizedDescription)
+      throw error
     }
   }
 
