@@ -17,6 +17,7 @@ struct AddEmailView: View {
 
       TextField("Email", text: $viewModel.email)
         .textFieldStyle(.primaryTextField)
+        .keyboardType(.emailAddress)
         .padding()
         .textInputAutocapitalization(.never)
 

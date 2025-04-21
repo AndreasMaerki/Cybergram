@@ -52,6 +52,7 @@ struct EditProfileView: View {
           Task {
             do {
               try await viewModel.updateUserData()
+              dismiss()
             } catch {
               self.error = error
             }

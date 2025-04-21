@@ -21,6 +21,8 @@ struct FeedCell: View {
         .resizable()
         .scaledToFit()
         .clipShape(.rect)
+        .frame(maxHeight: UIScreen.main.bounds.width)
+        .background(Color.gray.opacity(0.5))
 
       actionButtons
         .padding(.horizontal, 8)

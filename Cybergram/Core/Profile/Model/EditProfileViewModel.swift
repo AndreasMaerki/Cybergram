@@ -58,6 +58,10 @@ class EditProfileViewModel: ObservableObject {
 
     if !data.isEmpty {
       try await FirConstants.userCollection.document(user.id).updateData(data)
+      // user data is not expected to be updated frequently
+      // so the roundtrip doesn't cost much. Alternatively the
+      // user could be updated in place.
+      try await UserService.shared.fetchCurrentUser()
     }
   }
 }
