@@ -3,7 +3,6 @@ import Firebase
 import SwiftUI
 
 @Observable
-@MainActor
 class EditProfileViewModel {
   var user: User
   var fullName = ""
@@ -31,6 +30,7 @@ class EditProfileViewModel {
     }
   }
 
+  @MainActor
   func loadImage(fromItem item: PhotosPickerItem?) async {
     guard
       let item,
@@ -41,6 +41,7 @@ class EditProfileViewModel {
     profileImage = Image(uiImage: uiImage)
   }
 
+  @MainActor
   func updateUserData() async throws {
     var data = [String: Any]()
 
