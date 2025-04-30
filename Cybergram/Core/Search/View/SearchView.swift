@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SearchView: View {
   @State private var searchText = ""
-  @EnvironmentObject var viewModel: SearchViewModel
+  @Environment(SearchViewModel.self) var viewModel
 
   var body: some View {
     NavigationStack {
@@ -49,5 +49,5 @@ struct SearchView: View {
 
 #Preview {
   SearchView()
-    .environmentObject(SearchViewModel(userService: MockUserService()))
+    .environment(SearchViewModel(userService: MockUserService()))
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CompleteSignupView: View {
   @Environment(\.dismiss) var dismiss
-  @EnvironmentObject var viewModel: RegistrationViewModel
+  @Environment(RegistrationViewModel.self) var viewModel
 
   @State private var errorMessage = ""
   @State private var showAlert = false
@@ -52,6 +52,6 @@ struct CompleteSignupView: View {
 
 #Preview {
   CompleteSignupView()
-    .environmentObject(RegistrationViewModel())
+    .environment(RegistrationViewModel())
     .preferredColorScheme(.dark)
 }

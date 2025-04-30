@@ -1,7 +1,8 @@
 import Foundation
 
-class SearchViewModel: ObservableObject {
-  @Published var users = [User]()
+@Observable
+class SearchViewModel {
+  var users = [User]()
 
   private let userService: UserServiceType
   init(userService: UserServiceType = UserService()) {

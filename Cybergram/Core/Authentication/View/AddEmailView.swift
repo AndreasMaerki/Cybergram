@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddEmailView: View {
-  @EnvironmentObject var viewModel: RegistrationViewModel
+  @Environment(RegistrationViewModel.self) var viewModel
 
   var body: some View {
     VStack(spacing: 12) {
@@ -15,7 +15,7 @@ struct AddEmailView: View {
         .multilineTextAlignment(.center)
         .padding(.horizontal)
 
-      TextField("Email", text: $viewModel.email)
+      TextField("Email", text: Bindable(viewModel).email)
         .textFieldStyle(.primaryTextField)
         .keyboardType(.emailAddress)
         .padding()
@@ -37,5 +37,5 @@ struct AddEmailView: View {
 
 #Preview {
   AddEmailView()
-    .environmentObject(RegistrationViewModel())
+    .environment(RegistrationViewModel())
 }

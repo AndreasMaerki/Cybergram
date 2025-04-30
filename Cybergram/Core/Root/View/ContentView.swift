@@ -1,21 +1,21 @@
 import SwiftUI
 
 struct ContentView: View {
-  @StateObject var viewModel = ContentViewModel()
-  @StateObject var searchViewModel: SearchViewModel
-  @StateObject var feedViewModel: FeedViewModel
-  @StateObject var registrationViewModel = RegistrationViewModel()
+  @State var viewModel = ContentViewModel()
+  @State var searchViewModel: SearchViewModel
+  @State var feedViewModel: FeedViewModel
+  @State var registrationViewModel = RegistrationViewModel()
 
   var body: some View {
     Group {
       if viewModel.userSession == nil {
         LoginView()
-          .environmentObject(registrationViewModel)
+          .environment(registrationViewModel)
       } else if let currentUser = viewModel.currentUser {
         MainTabView(user: currentUser)
-          .environmentObject(searchViewModel)
-          .environmentObject(feedViewModel)
-          .environmentObject(PostGridViewModel(user: currentUser))
+          .environment(searchViewModel)
+          .environment(feedViewModel)
+          .environment(PostGridViewModel(user: currentUser))
       }
     }
   }

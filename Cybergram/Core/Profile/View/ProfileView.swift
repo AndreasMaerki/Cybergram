@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ProfileView: View {
   @State var showEditProfile: Bool = false
-  @EnvironmentObject var postGridViewModel: PostGridViewModel
+  @Environment(PostGridViewModel.self) var postGridViewModel
 
   var isCurrentUserProfile: Bool
   var user: User
@@ -34,7 +34,7 @@ struct ProfileView: View {
         }
 
         PostGridView()
-          .environmentObject(postGridViewModel)
+          .environment(postGridViewModel)
       }
     }
     .navigationTitle("Profile")
@@ -103,7 +103,7 @@ struct ProfileView: View {
 #Preview {
   let user = User.MOCK_USERS.first!
   return ProfileView(isCurrentUserProfile: true, user: user)
-    .environmentObject(
+    .environment(
       PostGridViewModel(
         user: user,
         postService: MockPostService()

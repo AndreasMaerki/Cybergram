@@ -2,9 +2,9 @@ import SwiftUI
 
 struct MainTabView: View {
   let user: User
-  @EnvironmentObject var searchViewModel: SearchViewModel
-  @EnvironmentObject var postGridViewModel: PostGridViewModel
-  @EnvironmentObject var feedViewModel: FeedViewModel
+  @Environment(SearchViewModel.self) var searchViewModel
+  @Environment(PostGridViewModel.self) var postGridViewModel
+  @Environment(FeedViewModel.self) var feedViewModel
 
   @State private var selectedIndex = 0
   var body: some View {
@@ -51,7 +51,7 @@ struct MainTabView: View {
   let feedViewModel = FeedViewModel(postService: mockPostService)
 
   return MainTabView(user: user)
-    .environmentObject(searchViewModel)
-    .environmentObject(postGridViewModel)
-    .environmentObject(feedViewModel)
+    .environment(searchViewModel)
+    .environment(postGridViewModel)
+    .environment(feedViewModel)
 }

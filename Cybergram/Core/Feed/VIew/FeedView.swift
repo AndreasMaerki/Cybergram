@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FeedView: View {
-  @EnvironmentObject var viewModel: FeedViewModel
+  @Environment(FeedViewModel.self) var viewModel
 
   var body: some View {
     NavigationStack {
@@ -29,11 +29,14 @@ struct FeedView: View {
         }
       }
       .background(Color.primaryBackground)
+      .task {
+        try? await viewModel.fetchPosts(limit: 20)
+      }
     }
   }
 }
 
 #Preview {
   FeedView()
-    .environmentObject(FeedViewModel(postService: MockPostService()))
+    .environment(FeedViewModel(postService: MockPostService()))
 }

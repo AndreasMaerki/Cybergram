@@ -2,13 +2,14 @@ import Combine
 import Firebase
 import Foundation
 
+@Observable
 @MainActor
-class ContentViewModel: ObservableObject {
+class ContentViewModel {
   private let service = AuthService.shared
   private var cancellables = Set<AnyCancellable>()
 
-  @Published var userSession: FirebaseAuth.User?
-  @Published var currentUser: User?
+  var userSession: FirebaseAuth.User?
+  var currentUser: User?
 
   init() {
     setupSubscribers()

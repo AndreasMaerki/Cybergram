@@ -4,7 +4,7 @@ import SwiftUI
 struct UploadPostView: View {
   @State private var caption = ""
   @State private var isPhotosPickerPresented = false
-  @StateObject var viewModel = UploadPostViewModel()
+  @State var viewModel = UploadPostViewModel()
   @Binding var tabIndex: Int
 
   var body: some View {

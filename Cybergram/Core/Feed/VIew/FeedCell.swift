@@ -3,7 +3,7 @@ import OSLog
 import SwiftUI
 
 struct FeedCell: View {
-  @EnvironmentObject var viewModel: FeedViewModel
+  @Environment(FeedViewModel.self) var viewModel
   @State private var showComments = false
 
   var post: Post
@@ -49,7 +49,7 @@ struct FeedCell: View {
       CommentsView()
         .presentationDetents([.fraction(0.6)])
         .presentationDragIndicator(.visible)
-        .environmentObject(CommentsViewModel(post: post))
+        .environment(CommentsViewModel(post: post))
     }
     .task {
       try? await viewModel.checkIfLiked(post)
@@ -117,7 +117,7 @@ struct FeedCell: View {
 
 #Preview {
   FeedCell(post: Post.MOCK_POSTS.first!)
-    .environmentObject(
+    .environment(
       FeedViewModel(postService: MockPostService())
     )
 }

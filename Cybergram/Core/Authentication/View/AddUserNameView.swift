@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddUserNameView: View {
-  @EnvironmentObject var viewModel: RegistrationViewModel
+  @Environment(RegistrationViewModel.self) var viewModel
 
   var body: some View {
     VStack(spacing: 12) {
@@ -15,7 +15,7 @@ struct AddUserNameView: View {
         .multilineTextAlignment(.center)
         .padding(.horizontal)
 
-      TextField("User name", text: $viewModel.userName)
+      TextField("User name", text: Bindable(viewModel).userName)
         .textFieldStyle(.primaryTextField)
         .padding()
 
@@ -35,5 +35,5 @@ struct AddUserNameView: View {
 
 #Preview {
   AddUserNameView()
-    .environmentObject(RegistrationViewModel())
+    .environment(RegistrationViewModel())
 }

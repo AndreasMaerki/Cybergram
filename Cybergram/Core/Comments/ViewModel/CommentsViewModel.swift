@@ -1,9 +1,10 @@
 import Firebase
 import Foundation
 
+@Observable
 @MainActor
-class CommentsViewModel: ObservableObject {
-  @Published var comments: [Comment] = []
+class CommentsViewModel {
+  var comments: [Comment] = []
 
   private let post: Post
   private let commentService: CommentServiceType

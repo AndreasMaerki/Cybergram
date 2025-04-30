@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CreatePaswordView: View {
-  @EnvironmentObject var viewModel: RegistrationViewModel
+  @Environment(RegistrationViewModel.self) var viewModel
 
   var body: some View {
     VStack(spacing: 12) {
@@ -15,7 +15,7 @@ struct CreatePaswordView: View {
         .multilineTextAlignment(.center)
         .padding(.horizontal)
 
-      SecureField("Password", text: $viewModel.password)
+      SecureField("Password", text: Bindable(viewModel).password)
         .textFieldStyle(.primaryTextField)
         .padding()
 
@@ -35,6 +35,6 @@ struct CreatePaswordView: View {
 
 #Preview {
   CreatePaswordView()
-    .environmentObject(RegistrationViewModel())
+    .environment(RegistrationViewModel())
     .preferredColorScheme(.dark)
 }

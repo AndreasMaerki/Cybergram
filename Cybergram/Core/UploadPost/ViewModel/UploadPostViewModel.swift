@@ -3,9 +3,10 @@ import Firebase
 import Foundation
 import SwiftUI
 
+@Observable
 @MainActor
-class UploadPostViewModel: ObservableObject {
-  @Published var selectedPhoto: PhotosPickerItem? {
+class UploadPostViewModel {
+  var selectedPhoto: PhotosPickerItem? {
     didSet {
       Task {
         await loadImage(fromItem: selectedPhoto)
@@ -13,7 +14,7 @@ class UploadPostViewModel: ObservableObject {
     }
   }
 
-  @Published var postPhoto: Image?
+  var postPhoto: Image?
   private var uiImage: UIImage?
 
   func loadImage(fromItem item: PhotosPickerItem?) async {

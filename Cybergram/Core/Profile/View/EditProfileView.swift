@@ -3,12 +3,12 @@ import SwiftUI
 
 struct EditProfileView: View {
   @Environment(\.dismiss) var dismiss
-  @StateObject private var viewModel: EditProfileViewModel
+  @State private var viewModel: EditProfileViewModel
 
   @State private var error: Error?
 
   init(user: User) {
-    _viewModel = StateObject(wrappedValue: .init(user: user))
+    _viewModel = State(wrappedValue: .init(user: user))
   }
 
   var body: some View {

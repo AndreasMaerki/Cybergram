@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CommentsView: View {
   @State private var commentText = ""
-  @EnvironmentObject private var viewModel: CommentsViewModel
+  @Environment(CommentsViewModel.self) private var viewModel
   @Environment(\.dismiss) var dismiss
 
   private var currentUser: User? {
@@ -77,7 +77,7 @@ struct CommentsView: View {
 
 #Preview {
   CommentsView()
-    .environmentObject(
+    .environment(
       CommentsViewModel(
         post: .MOCK_POSTS[0],
         MockCommentService()

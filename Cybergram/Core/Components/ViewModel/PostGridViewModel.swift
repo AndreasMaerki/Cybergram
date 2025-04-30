@@ -1,7 +1,8 @@
 import Foundation
 
-class PostGridViewModel: ObservableObject {
-  @Published var posts: [Post] = []
+@Observable
+class PostGridViewModel {
+  var posts: [Post] = []
 
   private let user: User
   private let postService: PostServiceType

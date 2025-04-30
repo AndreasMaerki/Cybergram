@@ -1,10 +1,11 @@
 import Firebase
 import Foundation
 
+@Observable
 @MainActor
-class FeedViewModel: ObservableObject {
-  @Published var posts: [Post] = []
-  @Published var error: Error?
+class FeedViewModel {
+  var posts: [Post] = []
+  var error: Error?
 
   private let postService: PostServiceType
 

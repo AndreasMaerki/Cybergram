@@ -2,13 +2,14 @@ import _PhotosUI_SwiftUI
 import Firebase
 import SwiftUI
 
+@Observable
 @MainActor
-class EditProfileViewModel: ObservableObject {
-  @Published var user: User
-  @Published var fullName = ""
-  @Published var bio = ""
-  @Published var profileImage: Image?
-  @Published var selectedImage: PhotosPickerItem? {
+class EditProfileViewModel {
+  var user: User
+  var fullName = ""
+  var bio = ""
+  var profileImage: Image?
+  var selectedImage: PhotosPickerItem? {
     didSet {
       Task {
         await loadImage(fromItem: selectedImage)
